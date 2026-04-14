@@ -1,0 +1,10 @@
+# WorkBuddy internal files
+.workbuddy/
+
+# Memory files
+*.memory
+
+# System files
+Thumbs.db
+Desktop.ini
+.DS_Store
