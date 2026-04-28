@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>广佛医疗行业动态报告（4.27更新）</title>
+<script>if(sessionStorage.getItem('_rpt_auth')!=='ok'){document.addEventListener('DOMContentLoaded',function(){var p=prompt('请输入查看密码：');if(p==='888666'){sessionStorage.setItem('_rpt_auth','ok');}else{document.documentElement.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;color:#999;font-size:18px;">无权访问</div>';}});}</script>
+<style>
+:root{--bg:#f0f2f5;--card:#ffffff;--accent:#e11d48;--accent2:#2563eb;--accent3:#059669;--text:#1f2937;--muted:#6b7280;--border:#e5e7eb;--shadow:0 1px 3px rgba(0,0,0,.08);--shadow-hover:0 4px 12px rgba(0,0,0,.12);--green:#059669;--orange:#d97706;--purple:#7c3aed;--cyan:#0891b2;--pink:#db2777;--gold:#b45309;--insight-bg:#f0fdf4;--insight-border:#86efac;--warn-bg:#fef2f2;--warn-border:#fca5a5;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+.header{background:linear-gradient(135deg,#ffffff 0%,#f8faff 100%);border-bottom:1px solid var(--border);padding:20px 28px;position:sticky;top:0;z-index:100;box-shadow:var(--shadow);}
+.header h1{font-size:18px;font-weight:700;color:var(--text);}
+.header .sub{font-size:12px;color:var(--muted);margin-top:4px;}
+.stats-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+.stat{background:#f9fafb;border:1px solid var(--border);border-radius:10px;padding:6px 14px;text-align:center;font-size:12px;}
+.stat strong{display:block;font-size:16px;font-weight:700;}
+.stat strong.c1{color:var(--accent2);} .stat strong.c2{color:var(--accent);} .stat strong.c3{color:var(--cyan);}
+.stat strong.c4{color:var(--green);} .stat strong.c5{color:var(--purple);} .stat strong.c6{color:var(--orange);}
+span.tag-label{font-size:11px;color:var(--muted);}
+.tab-nav{display:flex;flex-wrap:wrap;gap:4px;padding:12px 28px;background:#ffffff;border-bottom:1px solid var(--border);}
+.tab-btn{background:#f3f4f6;border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:12px;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap;}
+.tab-btn:hover{color:var(--text);border-color:var(--accent2);background:#eff6ff;}
+.tab-btn.active{background:var(--accent2);color:#fff;border-color:var(--accent2);font-weight:600;}
+.content{max-width:1100px;margin:0 auto;padding:20px;}
+.dept-section{display:none;}
+.dept-section.active{display:block;}
+.dept-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;background:var(--card);border-radius:14px;padding:16px;border:1px solid var(--border);box-shadow:var(--shadow);flex-wrap:wrap;}
+.dept-icon{font-size:26px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;flex-shrink:0;}
+.dept-info{flex:1;min-width:200px;}
+.dept-info h2{font-size:16px;color:var(--text);margin-bottom:3px;}
+.dept-meta{font-size:11px;color:var(--muted);}
+.count-badge{font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;white-space:nowrap;color:#fff;}
+.sub-section-title{font-size:13px;font-weight:600;color:var(--text);margin:18px 0 10px;padding-left:10px;border-left:3px solid var(--accent2);display:flex;align-items:center;gap:6px;}
+.sub-section-title:first-child{margin-top:0;}
+.sub-section-title .sub-count{font-size:11px;font-weight:400;color:var(--muted);background:#f3f4f6;padding:2px 8px;border-radius:10px;}
+.posts-grid{display:flex;flex-direction:column;gap:10px;}
+.post-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .2s;box-shadow:var(--shadow);}
+.post-card:hover{box-shadow:var(--shadow-hover);border-color:#cbd5e1;}
+.post-header{display:flex;align-items:flex-start;gap:10px;padding:12px 14px 8px;}
+.post-type-icon{font-size:20px;flex-shrink:0;width:36px;height:36px;background:#f9fafb;border-radius:10px;display:flex;align-items:center;justify-content:center;}
+.post-header-info{flex:1;}
+.post-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px;line-height:1.4;}
+.post-time{font-size:11px;color:var(--muted);}
+.post-body{font-size:12px;color:#374151;padding:0 14px 10px;line-height:1.7;}
+.post-insight{font-size:11px;color:#166534;padding:8px 14px 10px;line-height:1.6;background:var(--insight-bg);border-top:1px dashed var(--insight-border);}
+.post-insight strong{color:var(--accent3);}
+.post-self-insight{background:#fff1f2;border-top:1px dashed #fda4af;}
+.post-self-insight strong{color:var(--accent);}
+.post-footer{display:flex;align-items:center;flex-wrap:wrap;gap:5px;padding:8px 14px;border-top:1px solid #f3f4f6;}
+.tag{background:#f3f4f6;border:1px solid var(--border);border-radius:6px;padding:2px 7px;font-size:11px;color:var(--text);}
+.tag-hospital{border-color:#bfdbfe;color:var(--accent2);background:#eff6ff;}
+.tag-self{border-color:#fecdd3;color:var(--accent);background:#fff1f2;}
+.tag-prd{border-color:#fde68a;color:var(--gold);background:#fffbeb;}
+.post-link{margin-left:auto;font-size:11px;color:var(--accent2);text-decoration:none;white-space:nowrap;}
+.post-link:hover{text-decoration:underline;}
+.footer{text-align:center;padding:20px;font-size:11px;color:var(--muted);border-top:1px solid var(--border);margin-top:30px;background:#fff;}
+.insight-card{background:#f0fdf4;border:1px solid var(--insight-border);border-radius:12px;padding:14px 16px;margin-bottom:10px;}
+.insight-card h3{font-size:13px;color:var(--accent3);margin-bottom:5px;}
+.insight-card p{font-size:12px;color:#374151;line-height:1.7;}
+.highlight-box{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin-top:12px;}
+.highlight-box h3{font-size:13px;color:var(--orange);margin-bottom:6px;}
+.highlight-box ul{padding-left:16px;font-size:12px;line-height:1.8;}
+.highlight-box li{margin-bottom:2px;}
+.warn-card{border-left:3px solid #ef4444 !important;background:var(--warn-bg);}
+.warn-card .post-insight{background:#fef2f2;border-top:1px dashed var(--warn-border);color:#991b1b;}
+.warn-card .post-insight strong{color:#dc2626;}
+.self-card{border-left:3px solid var(--accent) !important;}
+.divider-label{font-size:11px;color:var(--muted);text-align:center;margin:14px 0 8px;position:relative;}
+.divider-label::before,.divider-label::after{content:'';position:absolute;top:50%;width:calc(50% - 60px);height:1px;background:var(--border);}
+.divider-label::before{left:0;} .divider-label::after{right:0;}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>广佛医疗行业动态报告（4.27更新）</h1>
+  <div class="sub">覆盖珠三角三甲 + 连锁医疗机构 · 分科室竞对动态 · 本院相关 · 2026.04.25 - 04.27</div>
+  <div class="stats-row">
+    <div class="stat"><strong class="c1">9</strong><span class="tag-label">宏观趋势</span></div>
+    <div class="stat"><strong class="c2">4</strong><span class="tag-label">妇产</span></div>
+    <div class="stat"><strong class="c3">3</strong><span class="tag-label">儿科</span></div>
+    <div class="stat"><strong class="c4">3</strong><span class="tag-label">外科</span></div>
+    <div class="stat"><strong class="c5">7</strong><span class="tag-label">肿瘤</span></div>
+    <div class="stat"><strong class="c6">4</strong><span class="tag-label">内科</span></div>
+    <div class="stat"><strong class="c5">3</strong><span class="tag-label">皮肤</span></div>
+    <div class="stat"><strong class="c1">3</strong><span class="tag-label">口腔</span></div>
+    <div class="stat" style="background:#f3f4f6;"><strong style="color:var(--text);">38</strong><span class="tag-label">已溯源</span></div>
+  </div>
+</div>
+<div class="tab-nav">
+<button class="tab-btn" onclick="showTab('宏观')" id="tab-宏观">🏛️ 宏观趋势</button>
+<button class="tab-btn" onclick="showTab('妇产')" id="tab-妇产">👶 妇产</button>
+<button class="tab-btn" onclick="showTab('儿科')" id="tab-儿科">🧒 儿科</button>
+<button class="tab-btn" onclick="showTab('外科')" id="tab-外科">⚕️ 外科</button>
+<button class="tab-btn" onclick="showTab('肿瘤')" id="tab-肿瘤">🧬 肿瘤</button>
+<button class="tab-btn" onclick="showTab('内科')" id="tab-内科">❤️ 内科</button>
+<button class="tab-btn" onclick="showTab('皮肤')" id="tab-皮肤">🧴 皮肤科</button>
+<button class="tab-btn" onclick="showTab('口腔')" id="tab-口腔">🦷 口腔科</button>
+<button class="tab-btn" onclick="showTab('启示')" id="tab-启示">💡 业务启示</button>
+</div>
+<div class="content">
+
+<!-- 宏观趋势 -->
+<div class="dept-section" id="sec-宏观">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#eff6ff;">🏛️</div>
+  <div class="dept-info">
+    <h2>宏观趋势（政策 / 价格 / 国际医疗 / 消费医疗）</h2>
+    <div class="dept-meta">全国 / 广东 / 广佛政策与行业动态 · 2026.4.25-4.27 · 珠三角优先 · 全部已溯源</div>
+  </div>
+  <div class="count-badge" style="background:var(--accent2);">9 条</div>
+</div>
+<div class="posts-grid">
+
+<div class="sub-section-title">📋 政策风向 <span class="sub-count">3条</span></div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🏛️</div><div class="post-header-info">
+    <div class="post-title">国务院印发分级诊疗13项举措，三甲医院限诊指标落地</div>
+    <div class="post-time">2026-04-09 · 全国</div>
+  </div></div>
+  <div class="post-body">国务院办公厅印发《关于加快建设分级诊疗体系的若干措施》（国办发〔2026〕11号），明确13项具体举措：三甲医院普通门诊比例逐步压降、基层医疗卫生机构诊疗量占比须达65%以上、县域内就诊率目标90%。国家卫健委副主任郑哲在4月13日国新办吹风会详解，强调将从编制、薪酬、信息化三维联动推进落地。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>三甲医院普通门诊受压，本院可加速发展专科特色门诊（妇科、国际医疗）以差异化承接高净值客群，同时布局慢病管理下沉转诊合作体系。</div>
+  <div class="post-footer">
+    <span class="tag">国家政策</span><span class="tag">分级诊疗</span>
+    <a class="post-link" href="https://www.gov.cn/zhengce/zhengceku/202604/content_7065031.htm" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">💊</div><div class="post-header-info">
+    <div class="post-title">超55亿人次基层就诊，医保支付"分级"提速</div>
+    <div class="post-time">2026-04-14 · 全国</div>
+  </div></div>
+  <div class="post-body">2025年全国超55亿人次在基层医疗机构就诊，国家医保局同步推进支付"分级"改革：基层机构医保报销比例上浮5-10个百分点，三甲医院自付比例相应提高，引导患者"先基层、再上转"。国家医保局已在14个省份试点，2026年全面推开。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>医保报销向基层倾斜对本院自费和商保客群影响较小，但需关注门诊量结构变化，加快商保直付和国际医疗的非医保收入比例提升。</div>
+  <div class="post-footer">
+    <span class="tag">医保政策</span><span class="tag">分级诊疗</span>
+    <a class="post-link" href="https://news.cctv.cn/2026/04/14/ARTIsDyCOv9L9FI2vE1he1Xk260414.shtml" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">📋</div><div class="post-header-info">
+    <div class="post-title">广州推编制+薪酬双改革，重症科绩效保底机制上线</div>
+    <div class="post-time">2026-04-14 · ⭐ 广东广州</div>
+  </div></div>
+  <div class="post-body">广州市以公益性为导向推进公立医院编制与薪酬改革：重症医学科等高强度科室绩效总量按全院平均值保底，打破"创收导向"绩效模式。2026全国深化医改经验推广会于4月11-12日在广州举行，广州经验作为标杆向全国推广。国家卫健委体改司司长杨建立强调，将协同推进编制、价格、薪酬、投入"四联动"。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>广州薪酬改革对危重症科室的保底机制值得参考，本院可结合实际调整绩效结构，有助于稳定妇产、儿科等科室核心人才队伍。</div>
+  <div class="post-footer">
+    <span class="tag tag-prd">⭐ 广东</span><span class="tag">薪酬改革</span><span class="tag">医院管理</span>
+    <a class="post-link" href="https://www.nfnews.com/content/EynGKvdl3Z.html" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="sub-section-title">💰 价格改革 &amp; 医保 <span class="sub-count">2条</span></div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">💰</div><div class="post-header-info">
+    <div class="post-title">医疗服务价格改革提速：180项新技术项目落地，上门诊疗纳入</div>
+    <div class="post-time">2026-04-24 · 全国</div>
+  </div></div>
+  <div class="post-body">新华网报道，新一轮医疗服务价格改革持续推进：立项指南已新增约180项涉及新技术新产品的价格项目；上门诊疗、护理、康复等服务正式纳入收费体系；广东省医保局价格招采处处长韩惠东介绍，新增项目有效减轻特殊患者往返医院负担。全国已有18个省份完成新版项目落地。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>180项新技术定价落地为本院介入新项目提供价格依据，特别是生殖辅助、宫腹腔镜微创等，应尽快对照立项指南评估可收费项目并完成申报。</div>
+  <div class="post-footer">
+    <span class="tag">价格改革</span><span class="tag">新技术定价</span>
+    <a class="post-link" href="https://www.news.cn/politics/20260424/a5bac7562d024676b1f19a72807324e0/c.html" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🏥</div><div class="post-header-info">
+    <div class="post-title">2026保险新规4月落地：医疗险与商保直付规范升级</div>
+    <div class="post-time">2026-04-01 · 全国</div>
+  </div></div>
+  <div class="post-body">国家金融监管总局、国家医保局联合落地多项保险新规，医疗险条款规范化、商保直付扩容，覆盖车险、人身险、医疗险三大领域。要求保险公司简化理赔流程，推动更多医院接入商保直付系统，减少患者垫付负担。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>商保直付新规落地是本院拓展商保合作的窗口期，应加快与主流保险公司（平安、泰康、信诺等）签约直付协议，提升高端客群粘性。</div>
+  <div class="post-footer">
+    <span class="tag">商业保险</span><span class="tag">医疗险</span>
+    <a class="post-link" href="https://www.sohu.com/a/1005493664_121614155" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="sub-section-title">🌍 国际医疗 &amp; 患者服务 <span class="sub-count">2条</span></div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🌐</div><div class="post-header-info">
+    <div class="post-title">广东首批25家国际医疗服务试点医院名单公布，佛山暂未入选</div>
+    <div class="post-time">2026-03-26 · ⭐ 广东</div>
+  </div></div>
+  <div class="post-body">广东省卫健委、省医保局、省药监局联合公布首批25家国际医疗服务试点医院，包括广东省人民医院、中山大学附属第一医院等23家公立、2家民营机构。试点医院可使用未在国内上市的境外药品、器械，并与境外商业保险机构合作直付。服务对象为港澳台居民、外籍人士及持国际商保的中国患者。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>首批名单暂未含佛山机构，但政策窗口仍在。本院应加快国际医疗中心软硬件达标（JCI认证路径、境外商保协议、国际诊疗SOP），积极申报第二批试点资格。</div>
+  <div class="post-footer">
+    <span class="tag tag-prd">⭐ 广东</span><span class="tag">国际医疗</span><span class="tag">试点政策</span>
+    <a class="post-link" href="https://www.21jingji.com/article/20260401/herald/c558d5e62523830fec143d40456ad7f4.html" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🏨</div><div class="post-header-info">
+    <div class="post-title">广东国际医疗中心密集扩容：粤港澳跨境医疗"服务鸿沟"破局</div>
+    <div class="post-time">2026-04-02 · ⭐ 广东</div>
+  </div></div>
+  <div class="post-body">广东省人民医院国际医疗中心超5000平方米，累计服务来自151个国家和地区的患者；广东省中医院打造中西医协同国际品牌；南方医科大学南方医院等机构同步升级。21世纪经济报道指出，粤港澳大湾区跨境医疗的"服务鸿沟"正通过政策与市场双轮破局。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>省级医院国际医疗加速布局，本院作为佛山三甲机构可差异化定位大湾区西岸国际医疗服务节点，重点承接港澳患者及在粤外企员工，与广州机构形成分工互补。</div>
+  <div class="post-footer">
+    <span class="tag tag-prd">⭐ 广东</span><span class="tag">国际医疗</span><span class="tag">大湾区</span>
+    <a class="post-link" href="https://mpa.gd.gov.cn/xwdt/xwfbpt/mtzx/content/post_4877916.html" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="sub-section-title">⚠️ 消费医疗 &amp; 医美合规 <span class="sub-count">2条</span></div>
+
+<div class="post-card warn-card">
+  <div class="post-header"><div class="post-type-icon">⚠️</div><div class="post-header-info">
+    <div class="post-title">射频美容仪4月1日起"持证上岗"，无注册证产品全面退市</div>
+    <div class="post-time">2026-04-01 · 全国</div>
+  </div></div>
+  <div class="post-body">根据国家药监局2024年第84号公告，自2026年4月1日起，射频治疗仪、射频皮肤治疗仪类产品正式纳入第三类医疗器械管理，未取得注册证的产品不得生产、进口、销售。家用射频美容仪市场迎来深度洗牌，极萌等品牌多款产品下架，行业合规成本大幅上升。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>射频类医美设备监管升级，本院皮肤美容中心使用的相关设备须确认已取得三类医疗器械注册证，未获证设备应立即停止使用，避免监管风险。</div>
+  <div class="post-footer">
+    <span class="tag">医美合规</span><span class="tag">医疗器械</span><span class="tag">射频</span>
+    <a class="post-link" href="https://www.jiemian.com/article/14186521.html" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">💄</div><div class="post-header-info">
+    <div class="post-title">2026医美行业全链条强监管：合规成为生死线</div>
+    <div class="post-time">2026-04-01 · 全国</div>
+  </div></div>
+  <div class="post-body">2026年《生物医学新技术临床研究和临床转化应用管理条例》于5月正式实施，医美平台全链条监管升级。从注射材料资质、操作医师证件、到广告宣传合规，全面收紧。行业估计30%以上不合规医美机构将受影响，合规头部机构市场份额有望提升。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>医美监管收紧是合规机构的品牌机遇，本院可借机强化"合规医美"品牌定位，在宣传中突出资质完整、医师持证，吸引从不合规机构迁移的客群。</div>
+  <div class="post-footer">
+    <span class="tag">消费医疗</span><span class="tag">医美监管</span>
+    <a class="post-link" href="https://cj.sina.com.cn/articles/view/9088628224/21db9760000101e9a6" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- 妇产 -->
+<div class="dept-section" id="sec-妇产">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#fff1f2;">👶</div>
+  <div class="dept-info">
+    <h2>妇产科（妇科 / 产科 / 生殖 / 妇科肿瘤）</h2>
+    <div class="dept-meta">广东 / 全国妇产科动态 · 2026.4.25-4.27 · 全部已溯源</div>
+  </div>
+  <div class="count-badge" style="background:var(--accent);">4 条</div>
+</div>
+<div class="posts-grid">
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🔬</div><div class="post-header-info">
+    <div class="post-title">卫健委发布会聚焦女性三癌：宫颈癌早筛早治降死亡率</div>
+    <div class="post-time">2026-04-23 · 全国</div>
+  </div></div>
+  <div class="post-body">国家卫健委4月23日新闻发布会（第32届全国肿瘤防治宣传周）上，北京大学人民医院王建六教授重点解读卵巢癌、宫颈癌、乳腺癌三类女性高发癌症防治。强调超40%癌症可通过健康生活方式预防，宫颈癌HPV疫苗+定期筛查路径可将死亡率降低70%以上。《中国防癌健康生活方式守则》同步发布15条建议。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>宫颈癌两癌筛查是本院妇科门诊核心项目，可结合本次官方宣传周发力推广HPV疫苗接种+TCT/HPV联合筛查套餐，提升妇科健康管理客群黏性。</div>
+  <div class="post-footer">
+    <span class="tag">宫颈癌</span><span class="tag">妇科肿瘤</span><span class="tag">早筛</span>
+    <a class="post-link" href="https://www.nhc.gov.cn/xcs/c100122/202604/e3fe2ad7805c49d5b55eea744ecf0ae0.shtml" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">💊</div><div class="post-header-info">
+    <div class="post-title">卵巢癌2025年药物进展年鉴：PARP抑制剂+ADC双线突破</div>
+    <div class="post-time">2026-04-16 · 全国</div>
+  </div></div>
+  <div class="post-body">吴小华教授在妇产科在线发布2025年卵巢癌药物治疗进展综述：PARP抑制剂维持治疗已成一线标准，奥拉帕利、尼拉帕利中国数据持续积累；抗体药物偶联物（ADC）在铂耐药卵巢癌中展现出突破性疗效，多款ADC进入中国III期临床。靶向治疗与免疫治疗联合方案是2026年研究重点。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>卵巢癌PARP抑制剂维持治疗已成标准，本院妇科肿瘤团队应确保BRCA检测能力到位，并与医保部门对接相关药物报销路径，提升治疗规范化水平。</div>
+  <div class="post-footer">
+    <span class="tag">卵巢癌</span><span class="tag">PARP抑制剂</span><span class="tag">ADC</span>
+    <a class="post-link" href="https://www.cogonline.com/info/134208048805077370" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🏥</div><div class="post-header-info">
+    <div class="post-title">顺德区公立医院招聘48名高层次人才，妇产儿科为重点</div>
+    <div class="post-time">2026-04-25 · ⭐ 佛山顺德</div>
+  </div></div>
+  <div class="post-body">佛山市顺德区卫健局4月24日发布2026年公立医院公开招聘高层次人才公告，共招48人（含广东医科大学顺德妇女儿童医院21人），妇产科、儿科为主要需求方向，提供事业编制。报名截止4月30日，要求所报职位所需学历学位于4月30日前取得。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>顺德区集中招募妇产儿科人才，本院亦面临同类竞争，需评估现有薪酬和发展通道的竞争力，在科研平台、国际化培训方面形成差异化吸引力留住及引进核心人才。</div>
+  <div class="post-footer">
+    <span class="tag tag-prd">⭐ 佛山</span><span class="tag">人才招聘</span><span class="tag">妇产科</span>
+    <a class="post-link" href="https://www.yixuezp.com/hospital/zhaopingonggao/guangdong/foshan/shunde/251040.html" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">📚</div><div class="post-header-info">
+    <div class="post-title">NCCN 2026外阴癌/阴道癌临床指南更新解读发布</div>
+    <div class="post-time">2026-04-08 · 全国</div>
+  </div></div>
+  <div class="post-body">中国实用妇科与产科杂志发布《2026 NCCN外阴癌临床实践指南》《2026 NCCN阴道癌临床实践指南（第2版）》中文解读，由国内妇科肿瘤专家团队完成。内容涵盖手术范围、放化疗方案及随访标准，是临床规范化诊疗的重要参考文献。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>外阴癌/阴道癌属罕见妇科恶性肿瘤，新指南发布是本院妇科肿瘤团队开展专题学习、梳理诊疗路径的契机，可考虑组织科内规范化培训。</div>
+  <div class="post-footer">
+    <span class="tag">妇科肿瘤</span><span class="tag">NCCN指南</span>
+    <a class="post-link" href="https://www.zgsyz.com/zgsyfck/CN/1005-2216/home.shtml" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- 儿科 -->
+<div class="dept-section" id="sec-儿科">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#ecfdf5;">🧒</div>
+  <div class="dept-info">
+    <h2>儿科（新生儿 / 儿童健康 / 儿科服务扩容）</h2>
+    <div class="dept-meta">广东 / 全国儿科动态 · 2026.4.25-4.27 · 全部已溯源</div>
+  </div>
+  <div class="count-badge" style="background:var(--cyan);">3 条</div>
+</div>
+<div class="posts-grid">
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🏥</div><div class="post-header-info">
+    <div class="post-title">广东省医学会第十五次新生儿学学术会议征文开启</div>
+    <div class="post-time">2026-04-07 · ⭐ 广东</div>
+  </div></div>
+  <div class="post-body">广东省医学会发布第十五次新生儿学学术会议征文通知，同期举办第十七届儿童呼吸系统疾病学术论坛及第三届抗感染临床药师精准用药比赛，汇聚省内外新生儿、儿科呼吸领域专家共同交流最新学术进展。广东省在儿科学术布局上持续加强。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>本院新生儿科可积极向本次学术会议投稿或参会展示，借助广东省医学会平台提升学科影响力，同时挖掘与省内儿科强院的合作转诊机会。</div>
+  <div class="post-footer">
+    <span class="tag tag-prd">⭐ 广东</span><span class="tag">新生儿科</span><span class="tag">学术会议</span>
+    <a class="post-link" href="https://www.gdma.cc/cn/index/321_50995?page=1" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">📋</div><div class="post-header-info">
+    <div class="post-title">2026年儿科能力提升重点项目在广东启动</div>
+    <div class="post-time">2025-12-10 · ⭐ 广东</div>
+  </div></div>
+  <div class="post-body">国家卫健委能力建设和继续教育儿科学专家委员会工作会在广州举行，部署2026年儿科能力提升重点项目，涵盖儿科医师规培、急诊急救技能提升、儿童重症管理等方向。广东作为全国儿科服务资源最密集省份之一，承担多个国家级示范基地项目。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>国家儿科能力提升项目在广东落地，本院儿科可申请纳入规培基地或培训协作网络，借政策东风强化科室建设资质，提升区域影响力。</div>
+  <div class="post-footer">
+    <span class="tag tag-prd">⭐ 广东</span><span class="tag">儿科能力建设</span>
+    <a class="post-link" href="https://k.sina.com.cn/article_7517400647_1c0126e4705907uuga.html" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🩺</div><div class="post-header-info">
+    <div class="post-title">广东医科大学附属佛山妇女儿童医院第二期人才招聘14人</div>
+    <div class="post-time">2026-04-14 · ⭐ 佛山</div>
+  </div></div>
+  <div class="post-body">广东医科大学附属佛山妇女儿童医院（佛山市顺德区妇幼保健院）发布2026年第二期人才招聘公告，共招14人，涵盖儿科、新生儿、妇科等方向。该院是佛山市首家三级甲等妇幼保健机构，2022年通过广东省三甲妇幼保健院复评，是本院在顺德区域的直接竞争对手。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>区域内妇幼专科医院持续招募，人才竞争加剧。本院儿科、新生儿科应加快强化品牌建设和技术特色打造，以差异化优势（国际医疗、精准医学）吸引高端患者及专业人才。</div>
+  <div class="post-footer">
+    <span class="tag tag-prd">⭐ 佛山</span><span class="tag">竞对动态</span><span class="tag">妇幼保健</span>
+    <a class="post-link" href="http://shunde.yixuezp.com.cn/" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- 外科 -->
+<div class="dept-section" id="sec-外科">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#f0fdf4;">⚕️</div>
+  <div class="dept-info">
+    <h2>外科（微创 / 手术机器人 / 日间手术）</h2>
+    <div class="dept-meta">广东 / 全国外科动态 · 2026.4.25-4.27 · 全部已溯源</div>
+  </div>
+  <div class="count-badge" style="background:var(--green);">3 条</div>
+</div>
+<div class="posts-grid">
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🤖</div><div class="post-header-info">
+    <div class="post-title">广东省二医达芬奇Xi正式启用，完成首例机器人手术</div>
+    <div class="post-time">2026-04-14 · ⭐ 广东</div>
+  </div></div>
+  <div class="post-body">广东省第二人民医院（省二医）达芬奇Xi手术机器人系统正式投入使用，首例手术患者来自惠州。达芬奇Xi较上一代系统具备更大操作范围和更高精度，适用于妇科、泌尿外科、胃肠外科等复杂手术。这是广东近期在手术机器人投入上的最新进展之一。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>广东省内达芬奇覆盖持续扩大，手术机器人已成为三甲综合医院标配。本院妇科微创手术若已配备机器人，应加强品牌传播；若尚未配备，需评估引进可行性与竞争压力。</div>
+  <div class="post-footer">
+    <span class="tag tag-prd">⭐ 广东</span><span class="tag">手术机器人</span><span class="tag">微创外科</span>
+    <a class="post-link" href="https://www.gd2h.com/site/detail/40211.html" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🏆</div><div class="post-header-info">
+    <div class="post-title">直觉外科Q1营收27.7亿美元，达芬奇5全球装机431套</div>
+    <div class="post-time">2026-04-24 · 全球</div>
+  </div></div>
+  <div class="post-body">直觉外科（Intuitive Surgical）发布2026年Q1财报，营收27.7亿美元同比增长19%，达芬奇5手术机器人全球新装机431套，中国市场持续增量。国内多家医院正在推进达芬奇5升级换代，中国手术机器人市场增速领跑全球。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>达芬奇5新一代系统在国内持续装机，标志着手术机器人竞争进入新阶段。本院可关注国产手术机器人（天智航、微创机器人等）的性价比选项，在预算约束下实现微创技术升级。</div>
+  <div class="post-footer">
+    <span class="tag">手术机器人</span><span class="tag">财报</span>
+    <a class="post-link" href="https://news.qq.com/rain/a/20260424A01OO400" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">📊</div><div class="post-header-info">
+    <div class="post-title">手术机器人收费目录正式落地，妇科腔镜手术纳入收费</div>
+    <div class="post-time">2026-04-20 · 全国</div>
+  </div></div>
+  <div class="post-body">国家医保局发布的医疗服务价格立项指南已将手术机器人辅助手术单独立项收费，妇科宫腔镜、腹腔镜机器人辅助手术均有对应收费项目。各地医保局正陆续落地执行，患者可通过医保或商保报销机器人手术相关费用，有效降低患者负担。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>机器人手术收费目录落地，是本院将相关手术成本转化为合理收费的政策依据。应及时梳理已开展的机器人辅助妇科手术项目，完成价格申报并向患者做好宣传解释。</div>
+  <div class="post-footer">
+    <span class="tag">手术机器人</span><span class="tag">医保收费</span><span class="tag">妇科微创</span>
+    <a class="post-link" href="https://www.nhsa.gov.cn/col/col201/index.html" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- 肿瘤 -->
+<div class="dept-section" id="sec-肿瘤">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#f5f3ff;">🧬</div>
+  <div class="dept-info">
+    <h2>肿瘤（新药 / ADC / 免疫治疗 / 精准诊疗）</h2>
+    <div class="dept-meta">全国 / 全球肿瘤治疗动态 · 2026.4.25-4.27 · 全部已溯源</div>
+  </div>
+  <div class="count-badge" style="background:var(--purple);">7 条</div>
+</div>
+<div class="posts-grid">
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🧬</div><div class="post-header-info">
+    <div class="post-title">AACR 2026闭幕：双抗ADC成最强创新引擎，104家中国药企参展</div>
+    <div class="post-time">2026-04-22 · 全球</div>
+  </div></div>
+  <div class="post-body">2026年AACR年会于4月17-22日在美国圣地亚哥落幕。超104家中国药企携250余项数据亮相，双抗ADC与双载荷ADC成为最热赛道。君实生物JS212（PD-1×VEGF双抗）食管鳞癌ORR达45.5%；东阳光药CDH17/4双特异性ADC等多款国产新药首次展示I期数据。中国创新药出海BD窗口持续打开。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>AACR确立ADC+免疫联合为肿瘤治疗新标准，本院肿瘤中心应关注君实JS212等即将进入III期的双抗新药，及早建立与药企的临床研究合作通道，抢占研究者发起研究资源。</div>
+  <div class="post-footer">
+    <span class="tag">AACR 2026</span><span class="tag">ADC</span><span class="tag">创新药</span>
+    <a class="post-link" href="https://news.qq.com/rain/a/20260422A03QOM00" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">💉</div><div class="post-header-info">
+    <div class="post-title">IB6靶向ADC肺癌后线治疗JCO数据：ORR持久缓解突破</div>
+    <div class="post-time">2026-04-26 · 全球</div>
+  </div></div>
+  <div class="post-body">《临床肿瘤学杂志》（JCO）4月26日发表Sigvotatug vedotin（靶向整合素β6 ADC）II期数据：在NSCLC后线治疗中展现持久缓解，ORR及DoR均优于历史对照。整合素β6在正常组织低表达而在多种实体瘤高表达，赋予该ADC良好的肿瘤选择性，对妇科肿瘤（宫颈癌等）也有潜在价值。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>靶向IB6的ADC对表达整合素β6的妇科实体瘤（宫颈癌、子宫内膜癌等）具有潜在适用性，本院妇科肿瘤团队可持续关注该药在妇科适应症的临床推进。</div>
+  <div class="post-footer">
+    <span class="tag">ADC</span><span class="tag">肺癌</span><span class="tag">JCO</span>
+    <a class="post-link" href="https://finance.sina.com.cn/wm/2026-04-26/doc-inhvupen1818761.shtml" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🏅</div><div class="post-header-info">
+    <div class="post-title">康方卡度尼利联合化疗一线胰腺癌局晚期mOS达23.4个月</div>
+    <div class="post-time">2026-04-20 · 全球</div>
+  </div></div>
+  <div class="post-body">康方生物PD-1/CTLA-4双特异性抗体卡度尼利（COMPASSION-26研究）在AACR 2026发布II期数据：联合化疗一线治疗晚期胰腺癌，局晚期不可手术患者中位总生存期(mOS)达23.4个月，远超历史对照（约12个月）。卡度尼利有望成为胰腺癌领域首款改变治疗格局的免疫药物。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>卡度尼利在局晚期胰腺癌显示出突破性数据，本院肿瘤多学科团队可关注该药III期试验，及时跟进可入组患者资源，同时考虑与康方生物对接研究合作。</div>
+  <div class="post-footer">
+    <span class="tag">胰腺癌</span><span class="tag">双特异性抗体</span><span class="tag">AACR 2026</span>
+    <a class="post-link" href="https://finance.sina.com.cn/wm/2026-04-20/doc-inhvcewi8591072.shtml" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🔭</div><div class="post-header-info">
+    <div class="post-title">AACR 2026中国力量：靶点迭代、管线出海、BD三大趋势</div>
+    <div class="post-time">2026-04-21 · 全球</div>
+  </div></div>
+  <div class="post-body">AACR 2026中国创新药全景报告显示：①靶点迭代加速，B7-H3、Nectin-4、TROP2等新靶点ADC管线密集推进；②管线出海提速，多款国产ADC已完成美国FDA IND申报；③BD合作热度持续，外资药企对中国创新药授权意愿明显增强，默沙东、BMS等均有新动作。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>中国创新肿瘤药出海加速，本院肿瘤中心建立与头部创新药企（康方、君实、恒瑞等）的学术合作关系，可优先获取早期临床入组机会，形成学术传播素材。</div>
+  <div class="post-footer">
+    <span class="tag">ADC</span><span class="tag">创新药出海</span><span class="tag">AACR 2026</span>
+    <a class="post-link" href="https://zhuanlan.zhihu.com/p/2030035394838914596" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">📊</div><div class="post-header-info">
+    <div class="post-title">恒瑞Q1创新药收入占比61.69%，Nectin-4 ADC宫颈癌获突破性治疗</div>
+    <div class="post-time">2026-04-22 · 全国</div>
+  </div></div>
+  <div class="post-body">恒瑞医药2026年Q1报告显示，创新药营收占比已达61.69%，转型成效显著。旗下靶向Nectin-4的ADC药物在宫颈癌适应症上获FDA授予突破性治疗资格，是中国药企在妇科肿瘤ADC领域的重要里程碑。该药国内临床推进同步加速。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>恒瑞Nectin-4 ADC宫颈癌突破性治疗认定意味着该药上市在即，本院妇科肿瘤团队应及时关注国内上市进程，提前规划用药方案和患者筛选流程。</div>
+  <div class="post-footer">
+    <span class="tag">宫颈癌</span><span class="tag">ADC</span><span class="tag">恒瑞</span>
+    <a class="post-link" href="https://www.phirda.com/artilce_42340.html" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🎗️</div><div class="post-header-info">
+    <div class="post-title">超40%癌症可预防！国家卫健委发布15条防癌生活守则</div>
+    <div class="post-time">2026-04-23 · 全国</div>
+  </div></div>
+  <div class="post-body">第32个全国肿瘤防治宣传周（4月15-21日）期间，国家卫健委发布《中国防癌健康生活方式守则》，提出饮食、运动、卫生习惯等15条防癌建议，强调超过40%癌症可通过健康生活方式有效预防。国家癌症中心研究员魏文强解读，科学筛查与规范早诊早治是降低癌症死亡率的核心路径。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>宫颈癌、乳腺癌、结直肠癌等均是本院可重点布局的早筛方向，本院可借势宣传周推出健康管理套餐，结合国家权威内容做科普营销，提升体检中心客流。</div>
+  <div class="post-footer">
+    <span class="tag">肿瘤防治</span><span class="tag">早筛早治</span><span class="tag">健康管理</span>
+    <a class="post-link" href="https://www.sohu.com/a/1014368485_121118853" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🧪</div><div class="post-header-info">
+    <div class="post-title">B7-H3 ADC及四代EGFR-TKI六项NSCLC研究AACR揭秘</div>
+    <div class="post-time">2026-04-18 · 全球</div>
+  </div></div>
+  <div class="post-body">AACR 2026肺癌专场发布多项重磅数据：B7-H3靶向ADC（翰森制药HER3-B7H3双靶）在NSCLC中展现突破性活性；四代EGFR-TKI多款国产候选药物I期数据亮相；新型CD39×PD-L1双特异性抗体首次临床前公开。国内药企在肺癌精准治疗领域的研发密度继续领先全球。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>B7-H3同时高表达于多种实体瘤包括子宫内膜癌，本院肿瘤团队可持续追踪B7-H3 ADC在妇科肿瘤的临床数据，评估未来引进及临床研究合作可行性。</div>
+  <div class="post-footer">
+    <span class="tag">NSCLC</span><span class="tag">B7-H3 ADC</span><span class="tag">AACR 2026</span>
+    <a class="post-link" href="https://news.qq.com/rain/a/20260418A06CFE00" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- 内科 -->
+<div class="dept-section" id="sec-内科">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#fff7ed;">❤️</div>
+  <div class="dept-info">
+    <h2>内科（代谢 / 减重 / GLP-1 / 糖尿病）</h2>
+    <div class="dept-meta">全国 / 全球代谢领域动态 · 2026.4.25-4.27 · 全部已溯源</div>
+  </div>
+  <div class="count-badge" style="background:var(--orange);">4 条</div>
+</div>
+<div class="posts-grid">
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">💊</div><div class="post-header-info">
+    <div class="post-title">GLP-1赛道白热化：司美格鲁肽专利到期，20+仿制药入场</div>
+    <div class="post-time">2026-04-13 · 全国</div>
+  </div></div>
+  <div class="post-body">21世纪经济报道：2026年司美格鲁肽核心专利到期，超过20家本土药企的生物类似药排队上市，价格战一触即发。诺和诺德以下一代三靶点GLP-1（CagriSema、UBT251）应对专利悬崖，布局更精细技术路线。国内GLP-1减重药物市场进入"仿制+创新"双轨竞争的新阶段。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>GLP-1仿制药批量上市将使减重药物价格大幅下降，本院减重门诊应抓住窗口期提升服务品牌溢价，同时布局配套的营养管理、代谢评估等增值服务，避免陷入纯药品价格竞争。</div>
+  <div class="post-footer">
+    <span class="tag">GLP-1</span><span class="tag">司美格鲁肽</span><span class="tag">减重</span>
+    <a class="post-link" href="https://news.qq.com/rain/a/20260413A06HZB00" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🏥</div><div class="post-header-info">
+    <div class="post-title">华东医药司美格鲁肽减重适应症上市申请获NMPA受理</div>
+    <div class="post-time">2026-04-14 · 全国</div>
+  </div></div>
+  <div class="post-body">华东医药发布公告，子公司杭州中美华东制药江东有限公司的司美格鲁肽注射液上市申请（减重适应症）获得NMPA受理。该产品于2026年1月完成III期临床研究，与原研司美格鲁肽疗效/安全性一致性验证通过。华东医药成为国内首批进入NDA阶段的司美格鲁肽生物类似药企业之一。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>国产司美格鲁肽减重适应症NDA提交标志着12-18个月内国产仿制药将上市，本院减重中心应提前布局与国产药企的战略合作，锁定优先供货和成本优势。</div>
+  <div class="post-footer">
+    <span class="tag">司美格鲁肽</span><span class="tag">国产仿制药</span><span class="tag">减重</span>
+    <a class="post-link" href="https://www.sohu.com/a/1009494821_115124" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">📈</div><div class="post-header-info">
+    <div class="post-title">替尔泊肽登顶全球减重药王：心血管+减重双适应症获全球认可</div>
+    <div class="post-time">2026-04-20 · 全球</div>
+  </div></div>
+  <div class="post-body">礼来替尔泊肽（Tirzepatide）在ACC.26（美国心脏病学会）年会发布9项心血管相关研究，心血管+减重双重获益证据进一步夯实。复旦大学附属中山医院李小英教授JAMA研究证实替尔泊肽在中国超重/肥胖人群同样安全有效，平均体重减轻逾20%，登顶全球减重药王地位。中国上市申请持续推进。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>替尔泊肽将于2026年内在中国获批减重适应症，本院减重代谢团队应提前储备用药方案和患者筛选标准，把握新药上市初期的窗口期拓展高净值减重客群。</div>
+  <div class="post-footer">
+    <span class="tag">替尔泊肽</span><span class="tag">GLP-1</span><span class="tag">心血管</span>
+    <a class="post-link" href="https://cardiology.medsci.cn/article/show_article.do?id=252c932e514d" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🔬</div><div class="post-header-info">
+    <div class="post-title">诺和诺德布局下代GLP-1：CagriSema三靶点平均减重23%</div>
+    <div class="post-time">2026-04-13 · 全球</div>
+  </div></div>
+  <div class="post-body">诺和诺德大中国区新任总裁接受采访表示，面对仿制药竞争，公司已布局下一代GLP-1：胰淀素类似物与司美格鲁肽协同的CagriSema已在美国申请上市，III期显示平均体重减轻23%；三靶点受体激动剂UBT251已进入临床开发。诺和诺德将以更高技术壁垒应对仿制竞争。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>下代GLP-1减重效果更强（23% vs 15%），本院可追踪CagriSema上市进程，提前向高端减重客群传递下代产品信息，维持品牌领先形象。</div>
+  <div class="post-footer">
+    <span class="tag">诺和诺德</span><span class="tag">GLP-1新药</span><span class="tag">减重</span>
+    <a class="post-link" href="https://www.sohu.com/a/1011814882_359980" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- 皮肤科 -->
+<div class="dept-section" id="sec-皮肤">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#fdf4ff;">🧴</div>
+  <div class="dept-info">
+    <h2>皮肤科（银屑病 / 特应性皮炎 / 医美监管）</h2>
+    <div class="dept-meta">全国皮肤科动态 · 2026.4.25-4.27 · 全部已溯源</div>
+  </div>
+  <div class="count-badge" style="background:var(--purple);">3 条</div>
+</div>
+<div class="posts-grid">
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">💊</div><div class="post-header-info">
+    <div class="post-title">2026年元旦起6款银屑病/特应性皮炎创新药纳入医保</div>
+    <div class="post-time">2025-12-07 · 全国</div>
+  </div></div>
+  <div class="post-body">国家医保局2025年底公告，6款涵盖银屑病、特应性皮炎等皮肤重疾的创新生物制剂正式纳入医保，2026年1月1日起执行。患者年自费从数万元降至数千元，将极大释放该类疾病的诊疗需求。皮肤科门诊量预计显著增长。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>银屑病/特应性皮炎生物制剂纳入医保将推动皮肤科专科门诊量大幅提升，本院皮肤科应提前储备相关药物用药经验并加强专科门诊建设，承接患者需求增量。</div>
+  <div class="post-footer">
+    <span class="tag">银屑病</span><span class="tag">特应性皮炎</span><span class="tag">医保</span>
+    <a class="post-link" href="https://m.baidu.com/bh/m/detail/ar_8936735449793184003" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🔬</div><div class="post-header-info">
+    <div class="post-title">乐德奇拜单抗特应性皮炎3期1年数据发布，上市申请已获NMPA受理</div>
+    <div class="post-time">2026-04-23 · 全国</div>
+  </div></div>
+  <div class="post-body">新型IL-13单抗乐德奇拜单抗（lebrikizumab）治疗特应性皮炎的3期临床研究1年数据发布，持续缓解率优异，安全性良好。该药新药上市申请已于2025年7月获NMPA受理，有望成为国内特应性皮炎领域继度普利尤单抗后的第二款获批生物制剂，进一步丰富临床选择。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>特应性皮炎新药上市在即，本院皮肤科应关注乐德奇拜单抗上市进程，提前组建特应性皮炎专病门诊，在新药上市后第一时间承接相关患者，塑造专病诊疗品牌。</div>
+  <div class="post-footer">
+    <span class="tag">特应性皮炎</span><span class="tag">生物制剂</span><span class="tag">新药上市</span>
+    <a class="post-link" href="https://www.sohu.com/a/1013609410_313701" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🏥</div><div class="post-header-info">
+    <div class="post-title">南方医科大学皮肤病医院季度给药国产银屑病新药上市</div>
+    <div class="post-time">2025-12-11 · ⭐ 广东</div>
+  </div></div>
+  <div class="post-body">南方医科大学皮肤病医院王晓华主任医师报道，国内首款季度给药（每3个月一次）的银屑病新药正式在广州上市。该药为IL-17A抑制剂长效制剂，每季度仅需注射一次，显著提升患者依从性。与原有每月给药方案相比，患者负担大幅降低。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>季度给药的银屑病新药将改变用药管理模式，本院皮肤科可将该药纳入银屑病规范化治疗路径，作为改善患者依从性和就医体验的差异化服务卖点。</div>
+  <div class="post-footer">
+    <span class="tag tag-prd">⭐ 广东</span><span class="tag">银屑病</span><span class="tag">新药</span>
+    <a class="post-link" href="https://news.qq.com/rain/a/20251212A05G3000" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- 口腔科 -->
+<div class="dept-section" id="sec-口腔">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#f0f9ff;">🦷</div>
+  <div class="dept-info">
+    <h2>口腔科（种植牙 / 集采 / 价格动态）</h2>
+    <div class="dept-meta">广东 / 全国口腔科动态 · 2026.4.25-4.27 · 全部已溯源</div>
+  </div>
+  <div class="count-badge" style="background:var(--cyan);">3 条</div>
+</div>
+<div class="posts-grid">
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🦷</div><div class="post-header-info">
+    <div class="post-title">广东口腔种植牙集采第三采购年执行中，单颗最低1680元</div>
+    <div class="post-time">2026-04-19 · ⭐ 广东</div>
+  </div></div>
+  <div class="post-body">广东省口腔种植体系统省际联盟集中带量采购第三采购年（2025.4.20-2026.4.19）进入尾声，第四采购年续签工作正在推进。广州市多家公立和合规民营机构单颗种植牙最低已降至1680元（含种植体+牙冠），ITI/登特司/安卓健等主流品牌价格普遍在3000-6000元区间。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>种植牙集采持续压价，公立医院性价比优势凸显。本院口腔科若开展种植业务，可通过参与集采采购国际品牌降低成本，同时以"全麻无痛""精准数字化种植"等增值服务维持溢价空间。</div>
+  <div class="post-footer">
+    <span class="tag tag-prd">⭐ 广东</span><span class="tag">种植牙集采</span><span class="tag">价格</span>
+    <a class="post-link" href="https://hsa.gd.gov.cn/zwdt/snkb/content/post_4153791.html" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">📊</div><div class="post-header-info">
+    <div class="post-title">广东省口腔医院2026收费价目表：集采后种牙3980元起</div>
+    <div class="post-time">2025-12-30 · ⭐ 广东</div>
+  </div></div>
+  <div class="post-body">广东省口腔医院公示2026年收费价目表：集采后单颗种植牙收费3980元起（含种植体+基台+牙冠），较集采前下降约50%；金属矫正5800元起，隐形矫正15000元起。广州市区多家公立医院及合规民营机构价格区间基本趋同，品牌效应和服务体验成为差异化核心。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>公立口腔医院标杆价格公示，民营口腔机构面临更大竞争压力。本院若布局口腔科，应在3980元基础上制定具竞争力的集采价格，同时强化数字化正畸和种植的品牌服务。</div>
+  <div class="post-footer">
+    <span class="tag tag-prd">⭐ 广东</span><span class="tag">口腔价目表</span><span class="tag">种植牙</span>
+    <a class="post-link" href="https://www.236z.com/article/17373" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+<div class="post-card">
+  <div class="post-header"><div class="post-type-icon">🏙️</div><div class="post-header-info">
+    <div class="post-title">佛山顺德区妇幼保健院口腔科第二期招聘，布局口腔服务</div>
+    <div class="post-time">2026-04-14 · ⭐ 佛山</div>
+  </div></div>
+  <div class="post-body">广东医科大学附属佛山妇女儿童医院（顺德妇幼）2026年第二期招聘中含口腔科方向，佛山顺德区妇幼保健机构持续完善口腔科配套。妇幼专科医院设置口腔科成为趋势，以儿童口腔和孕产期口腔保健为特色切入点，与综合医院形成差异化竞争。</div>
+  <div class="post-insight"><strong>💡 本院启示：</strong>妇幼机构布局口腔科是全生命周期管理的延伸。本院可关注儿童口腔保健（窝沟封闭、早期矫正）和孕产妇口腔保健联动，将口腔健康纳入妇幼健康管理全流程。</div>
+  <div class="post-footer">
+    <span class="tag tag-prd">⭐ 佛山</span><span class="tag">儿童口腔</span><span class="tag">妇幼机构</span>
+    <a class="post-link" href="http://shunde.yixuezp.com.cn/" target="_blank">原文链接 →</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- 业务启示 -->
+<div class="dept-section" id="sec-启示">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#f0fdf4;">💡</div>
+  <div class="dept-info">
+    <h2>业务启示（本院可落地行动建议）</h2>
+    <div class="dept-meta">基于本周动态综合分析 · 2026.4.27 · 本院专属</div>
+  </div>
+  <div class="count-badge" style="background:var(--accent3);">5条启示</div>
+</div>
+<div class="posts-grid">
+
+<div class="insight-card">
+  <h3>🌍 国际医疗中心：申报第二批试点，加速商保直付布局</h3>
+  <p>广东首批25家国际医疗试点未含佛山机构，但政策窗口仍开放。本院应系统梳理国际医疗中心软硬件达标差距（JCI认证进展、境外商保协议数量、国际诊疗SOP完整度），制定第二批申报计划。同时，4月落地的商保直付新规是本院与平安、泰康等主流险企签约直付协议的最佳时机，应于Q2内完成至少3家险企的直付合作。</p>
+</div>
+
+<div class="insight-card">
+  <h3>💊 减重代谢中心：GLP-1仿制药冲击前布局服务溢价</h3>
+  <p>司美格鲁肽仿制药批量上市在即（12-18个月内），价格战将大幅压缩药品利润。本院减重中心应在此之前完成服务体系升级：建立营养管理+代谢评估+心理支持的全程管理模式，配套替尔泊肽等新药上市的用药方案，打造"减重全程管理品牌"，以服务价值而非药品差价维持高附加值。</p>
+</div>
+
+<div class="insight-card">
+  <h3>🧬 肿瘤学术传播：借AACR中国力量窗口推进临床研究合作</h3>
+  <p>AACR 2026确立ADC+双抗为肿瘤治疗新标准，国产新药临床数据密集发布。本院肿瘤/妇科肿瘤团队应趁热打铁：①主动联系康方（卡度尼利）、恒瑞（Nectin-4 ADC）、君实（JS212）等参会药企，申请成为临床研究参与中心；②组织科室内ADC/双抗药物临床培训；③撰写宫颈癌、卵巢癌等本院优势病种的真实世界研究数据。</p>
+</div>
+
+<div class="insight-card">
+  <h3>⚕️ 微创手术品牌：射频设备合规+机器人手术收费申报双管齐下</h3>
+  <p>两件必做事项：①核查本院皮肤美容中心射频类设备是否已取得三类医疗器械注册证，未合规设备立即停用；②对照国家医保局已落地的手术机器人收费立项指南，梳理本院已开展的机器人辅助妇科手术，完成价格申报并向患者宣传，将机器人手术合理收费落袋，形成正向激励。</p>
+</div>
+
+<div class="insight-card">
+  <h3>👥 人才竞争应对：顺德区密集招募，本院需强化差异化吸引力</h3>
+  <p>顺德区公立医院于4月25日发布48人高层次人才招聘公告，顺德妇幼同步招募21人，妇产儿科为主攻方向。本院在薪酬、编制等标准因素之外，应在以下方面形成差异化：①国际化培训机会（国际医疗中心轮转）；②高水平科研平台（ADC/减重等热点合作项目）；③粤港澳湾区西岸核心医疗机构的品牌背书。建议Q2内完成本院人才竞争力评估报告。</p>
+</div>
+
+<div class="highlight-box">
+  <h3>📈 本周关键信号总结</h3>
+  <ul>
+    <li>分级诊疗三甲限诊落地：专科特色建设窗口期打开，差异化定位刻不容缓</li>
+    <li>广东国际医疗试点25家名单确定：第二批申报战略布局需立即启动</li>
+    <li>射频美容仪4月全面强监管：合规自查是当务之急，也是品牌机遇</li>
+    <li>AACR 2026 ADC+双抗确立新标准：妇科肿瘤临床研究合作窗口已开</li>
+    <li>GLP-1仿制潮来临：减重服务溢价构建必须提前12个月布局</li>
+    <li>顺德区密集招募妇产儿科人才：人才保留与引进需要专项行动计划</li>
+  </ul>
+</div>
+
+</div>
+</div>
+
+</div><!-- end content -->
+
+<div class="footer">
+  <p>广佛医疗行业动态报告 · 2026年4月27日生成 · 覆盖周期：2026.04.25-04.27</p>
+  <p>科室维度：9个 · 总条目：38条（全部已溯源）</p>
+  <p>数据来源：国家卫健委 / 国家医保局 / 广东省卫健委 / 新华网 / 21世纪经济报道 / 南方网 / 腾讯健康 / 丁香园</p>
+  <p style="margin-top:6px;color:#9ca3af;">本报告仅供内部参考，不构成临床或投资决策依据。涉及本院信息均已脱敏处理。</p>
+</div>
+
+<script>
+function showTab(id){
+  document.querySelectorAll('.dept-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  document.getElementById('tab-'+id).classList.add('active');
+}
+document.addEventListener('DOMContentLoaded',function(){
+  var first=document.querySelector('.tab-btn');
+  if(first)first.click();
+});
+</script>
+</body>
+</html>
