@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>广佛医疗行业动态报告（4.28更新）</title>
+<script>if(sessionStorage.getItem('_rpt_auth')!=='ok'){document.addEventListener('DOMContentLoaded',function(){var p=prompt('请输入查看密码：');if(p==='888666'){sessionStorage.setItem('_rpt_auth','ok');}else{document.documentElement.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;color:#999;font-size:18px;">无权访问</div>';}});}</script>
+<style>
+:root{--bg:#f0f2f5;--card:#ffffff;--accent:#e11d48;--accent2:#2563eb;--accent3:#059669;--text:#1f2937;--muted:#6b7280;--border:#e5e7eb;--shadow:0 1px 3px rgba(0,0,0,.08);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+.header{background:linear-gradient(135deg,#ffffff 0%,#f8faff 100%);border-bottom:1px solid var(--border);padding:20px 28px;position:sticky;top:0;z-index:100;box-shadow:var(--shadow);}
+.header h1{font-size:18px;font-weight:700;color:var(--text);}
+.header .sub{font-size:12px;color:var(--muted);margin-top:4px;}
+.stats-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+.stat{background:#f9fafb;border:1px solid var(--border);border-radius:10px;padding:6px 14px;text-align:center;font-size:12px;}
+.stat strong{display:block;font-size:16px;font-weight:700;}
+.stat strong.c1{color:var(--accent2);} .stat strong.c2{color:var(--accent);} .stat strong.c3{color:#0891b2;}
+.stat strong.c4{color:var(--accent3);} .stat strong.c5{color:#7c3aed;} .stat strong.c6{color:#d97706;}
+.history-banner{background:#fff8e1;border:1px solid #fde68a;border-radius:10px;padding:10px 16px;margin-top:12px;font-size:13px;color:#92400e;}
+.history-banner a{color:#d97706;font-weight:600;}
+.tab-nav{display:flex;flex-wrap:wrap;gap:4px;padding:12px 28px;background:#ffffff;border-bottom:1px solid var(--border);}
+.tab-btn{background:#f3f4f6;border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:12px;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap;}
+.tab-btn:hover{color:var(--text);border-color:var(--accent2);background:#eff6ff;}
+.tab-btn.active{background:var(--accent2);color:#fff;border-color:var(--accent2);font-weight:600;}
+.content{max-width:1100px;margin:0 auto;padding:20px;}
+.dept-section{display:none;}
+.dept-section.active{display:block;}
+.dept-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;background:var(--card);border-radius:14px;padding:16px;border:1px solid var(--border);box-shadow:var(--shadow);}
+.dept-icon{font-size:26px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;flex-shrink:0;}
+.dept-info{flex:1;min-width:200px;}
+.dept-info>div:first-child{font-size:15px;font-weight:700;}
+.dept-info>div:last-child{font-size:12px;color:var(--muted);margin-top:2px;}
+.footer{text-align:center;padding:24px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:32px;}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>🏥 广佛医疗行业动态报告</h1>
+  <div class="sub">数据来源：微信公众号 / 微信搜狗 / 行业媒体  |  更新周期：滚动7天</div>
+  <div class="history-banner">📋 历史存档：<a href="https://dfvynz844r-sys.github.io/trend_auto1/report-20260427.html" target="_blank">查看昨日报告（4月27日）</a></div>
+  <div class="stats-row">
+    <div class="stat"><strong class="c1">60</strong><span class="tag-label">行业动态</span></div>
+    <div class="stat"><strong class="c2">30</strong><span class="tag-label">本院相关</span></div>
+    <div class="stat"><strong class="c3">15</strong><span class="tag-label">友商动态</span></div>
+    <div class="stat"><strong class="c4">10</strong><span class="tag-label">肿瘤</span></div>
+    <div class="stat"><strong class="c5">10</strong><span class="tag-label">代谢</span></div>
+    <div class="stat"><strong class="c6">2026-04-28</strong><span class="tag-label">报告日期</span></div>
+  </div>
+</div>
+
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="switchTab('tab-macro')">🏛️ 宏观趋势</button>
+<button class="tab-btn" onclick="switchTab('tab-obgyn')">👶 妇产</button>
+<button class="tab-btn" onclick="switchTab('tab-peds')">🧒 儿科</button>
+<button class="tab-btn" onclick="switchTab('tab-surgery')">⚕️ 外科</button>
+<button class="tab-btn" onclick="switchTab('tab-oncology')">🧬 肿瘤</button>
+<button class="tab-btn" onclick="switchTab('tab-glp1')">❤️ 内科/代谢</button>
+<button class="tab-btn" onclick="switchTab('tab-derma')">🧴 皮肤科</button>
+<button class="tab-btn" onclick="switchTab('tab-stomat')">🦷 口腔科</button>
+<button class="tab-btn" onclick="switchTab('tab-local')">⭐ 本院相关</button>
+</div>
+
+<div class="content">
+  
+<div class="dept-section" id="dept-宏观趋势">
+  <div class="dept-header">
+    <div class="dept-icon" style="background:#ede9fe;">🏛️</div>
+    <div class="dept-info">
+      <div style="font-size:15px;font-weight:700;color:#1f2937;">宏观趋势</div>
+      <div style="font-size:12px;color:#6b7280;margin-top:2px;">15条动态</div>
+    </div>
+  </div>
+  
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026医改攻坚|6大核心科室必守职责,书记院长必看!</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 医疗改革 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57CShls2fEFAh7IvkoVvR5TVqXa8Fplpd9xBXqdpLxfdrPv9yhNFpf9lGHZ1nGoDmJRXRWjjch2C00SIa9mMcXcLbcl5HVtAUZg7pRq1XEHpgHhgB9w2R70D1CcWoI8QKiomSSJRM4mf8SiRO8ErdIyvQsSgsyJD6E5-vgRJtHFxZYuLl0s21qMSVCobSdVzRw691pQTg72lVflztgI7RZ1g..&amp;type=2&amp;query=%E5%8C%BB%E7%96%97%E6%94%B9%E9%9D%A9 2026&amp;token=1DCAA03255DEE7C96A6F3A1266FFD0196A425AE569F00BC4" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:8px 12px;margin-top:8px;font-size:12px;"><strong style="color:#059669;">💡 本院启示：</strong><span style="color:#166534;">关注广东医保支付改革落地进度，重点跟踪三明医改扩面动态</span></div>
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026医改定调&ldquo;强基稳二控三&rdquo;,各级医院转型指南请收好</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 医疗改革 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57CShls2fEFAh7IvkoVvR5TVqXa8Fplpd9ZuXlfReWK0crQ4snUzZ9mgF9ymmDPymsTOhQNYTgs2vzUip9kKya1n_SE01OvNcF1sRP9DF8GrqwF68e-JaKOvSSx5r76WE_m5Ih5OtfErdXB7eaoQAl4pmRPb_UY14DMg3eGvcf4jLUesHBDiFTMelMmbUSL-LZqC_dx8cJgMv2CsG6-xMgzQ..&amp;type=2&amp;query=%E5%8C%BB%E7%96%97%E6%94%B9%E9%9D%A9 2026&amp;token=1DCAA03255DEE7C96A6F3A1266FFD0196A425AE569F00BC4" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">【重磅】2026 医改攻坚:公立医院 &ldquo;强基・稳二・控三&rdquo; 落地执行全指南</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 医疗改革 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57CShls2fEFAh7IvkoVvR5TVqXa8Fplpd9uq8ZiQYdSYZfZqza6LyYLT3HCsrnR6H3hpmYWp6fakFTyWhsu_ACO0j0MP8-vdAXDFl2mNnIjR-4ALW4HhtSLzU70NoUAxmNIbA1pBZ7Fxue-TCN6uUZWyQP9DyzY7XAwre-p6aMZtjyo4EkYMfZ3DPI8RbsKIwC75U3_IXc5czf3q8uRDTfkw..&amp;type=2&amp;query=%E5%8C%BB%E7%96%97%E6%94%B9%E9%9D%A9 2026&amp;token=1DCAA03255DEE7C96A6F3A1266FFD0196A425AE569F00BC4" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026医疗改革大动作:取消24小时值班,终于对医患双方都负责了</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 医疗改革 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57CShls2fEFAh7IvkoVvR5TVqXa8Fplpd9hoBaFol1CbzRmjygZ6rYsidJNlRJucfJQ7kjmrmCZyyH4Bmst-p2oYK7JwlqeFFf-BOaVzM8qb-vDofvc5tzV7NWgvnOlqJx-MrFoN7FwfXVt-x4EKsjYWSsn7rc1xiE886ztXgSaVXRcWroCu7k7wJ9aL3Rm1LxqVklGN4Xlon1AfaFW2DefQ..&amp;type=2&amp;query=%E5%8C%BB%E7%96%97%E6%94%B9%E9%9D%A9 2026&amp;token=1DCAA03255DEE7C96A6F3A1266FFD0196A425AE569F00BC4" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026医疗变革落地:三大改革重塑就医新生态</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 医疗改革 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57CShls2fEFAh7IvkoVvR5TVqXa8Fplpd9h3YZ2JQ7t81mLKfEOqP0V25Rha-P-5Ylhz-vsTTN7LM4N-lCTYyDrImR1fvyR-7swqJsfbjwWKoZyDDWEc1N-e4-Q1OiQtxCZuud4KOyNjGFcHDlUQiZ7Q7DIwhoctoCxXN8GpOq-Fjitz7vMBbWaoP9Xb1yMPZwRGxrJoXWUrs5eBgmN3LoYQ..&amp;type=2&amp;query=%E5%8C%BB%E7%96%97%E6%94%B9%E9%9D%A9 2026&amp;token=1DCAA03255DEE7C96A6F3A1266FFD0196A425AE569F00BC4" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">关于网传&ldquo;2026年4月1日医保异地就医新政策&rdquo;的辟谣声明</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 医保政策 2026年4月</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57T-5mtHtFUjZ7IvkoVvR5TVqXa8Fplpd9S6c9E9Valamrh4Ume-omebuuUSsff4wU6ZWxzsnMkqhizqw_Itg2t4R_kRGThNgPWhl3MTp00VEWJi_XHz9_adGOIwuQPy5J0XkIefp61nDO2SMm4s9IqSZbB09bxX6_8GBuNY3KtT6_CVINdzphNyU-99HXJP_dZ3Lab4Lr98AO8fIRwtipOg..&amp;type=2&amp;query=%E5%8C%BB%E4%BF%9D%E6%94%BF%E7%AD%96 2026%E5%B9%B44%E6%9C%88&amp;token=1DCAAB090A83B8953731674C399B968F375B4FF469F00BC6" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026年山东医保新政4月1日起正式落地!全国统一实施医保便民惠民新政策.(核心变化、政策解读)</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 医保政策 2026年4月</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57T-5mtHtFUjZ7IvkoVvR5TVqXa8Fplpd9huhkd_iHuBWBGI-_XcSQzYNOmqC8Y3McfyCOJF1UFQNLEQa7D85TJMGyJK6nyQNb2w4LiEQ7DkHveCu7UmBC97xrcxEBY0yQ2JKKn_g5XRA-AJgEeLjNIjrl3kJuUm-uDBAqewt880Fkdnoonf3SB5NKirLMR5e7GwbqhXINVZhr1dbZWbKUeQ..&amp;type=2&amp;query=%E5%8C%BB%E4%BF%9D%E6%94%BF%E7%AD%96 2026%E5%B9%B44%E6%9C%88&amp;token=1DCAAB090A83B8953731674C399B968F375B4FF469F00BC6" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026年医保新政来了!4月1日起实施,这5大变化与你息息相关</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 医保政策 2026年4月</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57T-5mtHtFUjZ7IvkoVvR5TVqXa8Fplpd9ZcTukCcRYxrO46MwyfUDIrIxkC0i5we6HVadoI7e3s7CPUC5wL2SDJHsk8aThk8kfZHxuW0r1lipgUGQi-Xz1G-8oMYpE3L0nUuBoTvNSBLZS6V5jnyg3jWDtlt76gXRJG1-1pJnl2aB4JVZ-bnY0bW6dY5loKrkEvXg2ywayWjs46dn8Efgxg..&amp;type=2&amp;query=%E5%8C%BB%E4%BF%9D%E6%94%BF%E7%AD%96 2026%E5%B9%B44%E6%9C%88&amp;token=1DCAAB090A83B8953731674C399B968F375B4FF469F00BC6" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+  <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:13px;"><strong style="color:#059669;">💡 业务启示：</strong><span style="color:#166534;">关注广东医保支付改革落地进度，重点跟踪三明医改扩面动态</span></div>
+</div>
+
+<div class="dept-section" id="dept-妇产">
+  <div class="dept-header">
+    <div class="dept-icon" style="background:#ede9fe;">👶</div>
+    <div class="dept-info">
+      <div style="font-size:15px;font-weight:700;color:#1f2937;">妇产</div>
+      <div style="font-size:12px;color:#6b7280;margin-top:2px;">10条动态</div>
+    </div>
+  </div>
+  
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">会议通知丨第25届中国及亚太地区妇科肿瘤微创诊治新进展暨2026年珠江西岸妇科学术交流会暨国际微无创医学会青年委员会第二届学术会议</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 妇产科 新进展 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57xACKbawi4j57IvkoVvR5TVqXa8Fplpd9rTkJPzP6Sf5TVcc_jWc3_mJ-0ioHSpJe1V-fa2VmJWqDkBSfH2eAEjuiREb4J4oS1zWZHbSPCv7oS0SoK9bhAPTO8xincv6evhyd1CID_5LrdEKU4hM67uLZ05wrKiobqctfd2ElgjWz0vdJeyZVSVztkYL5kpIc9FY0trmuwtmAFV_3u-a3OQ..&amp;type=2&amp;query=%E5%A6%87%E4%BA%A7%E7%A7%91 %E6%96%B0%E8%BF%9B%E5%B1%95 2026&amp;token=1DCAC163C54E745AF9FFA982F6276E1AFA5C606F69F00BC9" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:8px 12px;margin-top:8px;font-size:12px;"><strong style="color:#059669;">💡 本院启示：</strong><span style="color:#166534;">关注辅助生殖进医保进展，本院可提前布局生育力评估服务</span></div>
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">课程预告 | 中山一院妇科临床前沿新进展汇报会(2026年3月24日)</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 妇产科 新进展 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57xACKbawi4j57IvkoVvR5TVqXa8Fplpd9p00HPr6ZndST9c_4a_A1rNHVd2dYC0VCFQXJ7FbJQD04UZrlVAPHpNOtt3b9bZo3nK6toMgQBY0CO8MrUX3mbM41nfWkv_-JmdhqLEpWCLA021g7zbcVkq-xFBsVoWb0zOUm-qenj8p78kpwBWeoL98q9_zgYDo3rY3FPpFcCYW54z_tGSZTqA..&amp;type=2&amp;query=%E5%A6%87%E4%BA%A7%E7%A7%91 %E6%96%B0%E8%BF%9B%E5%B1%95 2026&amp;token=1DCAC163C54E745AF9FFA982F6276E1AFA5C606F69F00BC9" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">课程预告 | 中山一院妇科临床前沿新进展汇报会(2026年3月31日)</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 妇产科 新进展 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57xACKbawi4j57IvkoVvR5TVqXa8Fplpd9p00HPr6ZndST9c_4a_A1rNHVd2dYC0VCFQXJ7FbJQD04UZrlVAPHpAZQzkhjzs5WmJBV-SsH9GZWpu_jxCE7KuzSI7TE0K5G7K3BE8Ii_6G-nicsJ6MA7IX-INWDSNidkfDygJCzp55jg8TIavaQPXf3oQSFgXpB5NHfDIc-mAP0OK9DLfgmPA..&amp;type=2&amp;query=%E5%A6%87%E4%BA%A7%E7%A7%91 %E6%96%B0%E8%BF%9B%E5%B1%95 2026&amp;token=1DCAC163C54E745AF9FFA982F6276E1AFA5C606F69F00BC9" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">国家肿瘤区域医疗中心妇科肿瘤专委会成立大会暨2026年妇科肿瘤新进展研讨会在蚌举行</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 妇产科 新进展 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57xACKbawi4j57IvkoVvR5TVqXa8Fplpd98wY2t0B2GuT5I9wPseQY2t2FYh2FvdWeqyYS5I2YqOxh7-pi8SADsiiRg470kUfvwfAxzZKJZx0FPefV5QsOdwMr1Ao56MlvQWo_mA8AoPsiwAUIHVHafQZrtiPhNpXECbdDsLNhn5cGLs3sG4raY6a1jCqXFCqT6a0WOo3Plh7S-e4Yz84xMA..&amp;type=2&amp;query=%E5%A6%87%E4%BA%A7%E7%A7%91 %E6%96%B0%E8%BF%9B%E5%B1%95 2026&amp;token=1DCAC163C54E745AF9FFA982F6276E1AFA5C606F69F00BC9" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026年浙江省护理学会母婴/产科护理最佳实践与新进展学术交流会议论文征集通知</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 妇产科 新进展 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57xACKbawi4j57IvkoVvR5TVqXa8Fplpd9VV98NVlOH5R86Ro6iR10_ZjUn5cEqmF9h1EgqYZbUD76mk-wr1eHq0dHdISFoipQBMnSdeXc80ASMgERyEc7sWp1n-MfaaBtePR9ZZFV8fEWjugYAgqASIbVuuI8Q-hHxfoDkMULfQYATrbOf_LGBf3CKBOoO9JsbkDi48_6iF8YJSSFPgfogQ..&amp;type=2&amp;query=%E5%A6%87%E4%BA%A7%E7%A7%91 %E6%96%B0%E8%BF%9B%E5%B1%95 2026&amp;token=1DCAC163C54E745AF9FFA982F6276E1AFA5C606F69F00BC9" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026辅助生殖政策全解读:医保落地+跨境合规,渠道商如何抓住红利?</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 辅助生殖 医保 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57ajzf6eXKdo57IvkoVvR5TVqXa8Fplpd9Ti4X-5kQIC3BlYsJzArcakzBEwByQOzBQ88x6a-z87Slxh4a-Nd1zuz2nE3GzgPdKt1dJ559Ly8nwqu_spLg7sSMcaG7cBmZVpvSo3dpYHl5qqtPdSS4W0Bja6h4SjD_gdmJ303vbg73T4OCjs4KGAWVYN5LuRyaznM5MpK3i5CTJmCU1UgHwQ..&amp;type=2&amp;query=%E8%BE%85%E5%8A%A9%E7%94%9F%E6%AE%96 %E5%8C%BB%E4%BF%9D 2026&amp;token=1DCACBF730BF82A80C0A5B7703F90B1B0CCBAD3069F00BCB" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026中国辅助生殖全景报告:出生人口792万、不孕率18.2%、医保全面落地,一个万亿级生育赛道正式爆发</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 辅助生殖 医保 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57ajzf6eXKdo57IvkoVvR5TVqXa8Fplpd9kwW2YHZSahwf36rzb5bPEfhbQ2-jy5dJrbWWYZATapwSLDykJ-lt9eZsfsmz89zGO4T-FLH3D5iaNSX5IY9-CtkrJqL2qQ3UhAqX2l5wO4-DO0Q8pfDXZ0TlFDCo-gW_S--PdR4yzexgXHcW5ksiMx01SYGBWA-KWX5T0dUnA9UtPujwwRB2Pw..&amp;type=2&amp;query=%E8%BE%85%E5%8A%A9%E7%94%9F%E6%AE%96 %E5%8C%BB%E4%BF%9D 2026&amp;token=1DCACBF730BF82A80C0A5B7703F90B1B0CCBAD3069F00BCB" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026正和&middot;国际医疗暨世界辅助生殖大会,3月5日举办(附免费门票+交通指南)</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 辅助生殖 医保 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57ajzf6eXKdo57IvkoVvR5TVqXa8Fplpd9_foxUl1Dzf8LbtUIknGa0N4eweQeJwkhb6pmAIckYYg1XKUWnxQWtdB2v_kyxN7xmIeWdGRrLFxpbO53NEzbabhPYx6ufRgieeUjVmARMsV691sk4ajl0Qk8-Q5Mum_HZsrPN9sBZ6Dh6Hd5cOJQHVkk303b3AF9QxlrmFTkI0JOJBjQH7pCxQ..&amp;type=2&amp;query=%E8%BE%85%E5%8A%A9%E7%94%9F%E6%AE%96 %E5%8C%BB%E4%BF%9D 2026&amp;token=1DCACBF730BF82A80C0A5B7703F90B1B0CCBAD3069F00BCB" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+  <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:13px;"><strong style="color:#059669;">💡 业务启示：</strong><span style="color:#166534;">关注辅助生殖进医保进展，本院可提前布局生育力评估服务</span></div>
+</div>
+
+<div class="dept-section" id="dept-外科">
+  <div class="dept-header">
+    <div class="dept-icon" style="background:#ede9fe;">⚕️</div>
+    <div class="dept-info">
+      <div style="font-size:15px;font-weight:700;color:#1f2937;">外科</div>
+      <div style="font-size:12px;color:#6b7280;margin-top:2px;">3条动态</div>
+    </div>
+  </div>
+  
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">《癌度快报》2026年2月25日:2026年期间这15款抗肿瘤新药有望在中国获批上市!</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 肿瘤新药 获批 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw571fTrFTM1K757IvkoVvR5TVqXa8Fplpd98EVQvYcgaE338SYWalkIa_fFyOqF2HhsglV6v5p91F4IZ8kPRin6IlmOrJd9E-92oeAAGHDPCALsJ1MIk3KLXoDMOKNd-utqz5yHdEjRSIg6LhJyzAEopRhokzjwT78POP-1etwyzpA9VpT5Za9yJxOME4QhU0DkIxmjADnx-hY5eBgmN3LoYQ..&amp;type=2&amp;query=%E8%82%BF%E7%98%A4%E6%96%B0%E8%8D%AF %E8%8E%B7%E6%89%B9 2026&amp;token=1DCAD68B60EFD5F85C5D0C204B50D1DB5C258A9269F00BCC" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026 年, 这 15 款「抗肿瘤新药」有望在中国获批上市</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 肿瘤新药 获批 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw571fTrFTM1K757IvkoVvR5TVqXa8Fplpd9QYbLV8ixbZUGUQKabVG4LhJv1rkTsto0WS6zJ4XmxPwx6zMhhYrpBPPAh0C2Mw4Kkx8PSwz1l7bgfV7J0oiajONGRDC8u3jJKGRsMAYI-Rt64pCixg_sL4VwYY1AWlL7D6GpYvVFFVwqhi08dzezn3LCXipsvGFE6sadfC1ZzG2E8RsmObDbtQ..&amp;type=2&amp;query=%E8%82%BF%E7%98%A4%E6%96%B0%E8%8D%AF %E8%8E%B7%E6%89%B9 2026&amp;token=1DCAD68B60EFD5F85C5D0C204B50D1DB5C258A9269F00BCC" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026肺癌病友必看:21款获批新药+6大免疫黑科技,横扫八大靶点,临床治愈之路再提速</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 肿瘤新药 获批 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw571fTrFTM1K757IvkoVvR5TVqXa8Fplpd9rNyYZY3s6XE_xwY1IZ0GDkeqYE0Zcmu8GnAj8q9TYU12fWDVe64Qum4ZYjNwQwAr9iKrfCF5SRRIFwtgO-fGIupbGfin4emncOVTd8cFwdrx2X1dqjsWwf-lReY7V3eIyGxf_QLxAw1ZEkenB0WRK1Z9c5piM2X43tC3Q2GcZhROJBjQH7pCxQ..&amp;type=2&amp;query=%E8%82%BF%E7%98%A4%E6%96%B0%E8%8D%AF %E8%8E%B7%E6%89%B9 2026&amp;token=1DCAD68B60EFD5F85C5D0C204B50D1DB5C258A9269F00BCC" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+  
+</div>
+
+<div class="dept-section" id="dept-肿瘤">
+  <div class="dept-header">
+    <div class="dept-icon" style="background:#ede9fe;">🧬</div>
+    <div class="dept-info">
+      <div style="font-size:15px;font-weight:700;color:#1f2937;">肿瘤</div>
+      <div style="font-size:12px;color:#6b7280;margin-top:2px;">10条动态</div>
+    </div>
+  </div>
+  
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">《癌度快报》2026年2月25日:2026年期间这15款抗肿瘤新药有望在中国获批上市!</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 肿瘤新药 获批 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw571fTrFTM1K757IvkoVvR5TVqXa8Fplpd98EVQvYcgaE338SYWalkIa_fFyOqF2HhsglV6v5p91F4IZ8kPRin6IlmOrJd9E-92oeAAGHDPCALsJ1MIk3KLXoDMOKNd-utqz5yHdEjRSIg6LhJyzAEopRhokzjwT78POP-1etwyzpA9VpT5Za9yJxOME4QhU0DkIxmjADnx-hY5eBgmN3LoYQ..&amp;type=2&amp;query=%E8%82%BF%E7%98%A4%E6%96%B0%E8%8D%AF %E8%8E%B7%E6%89%B9 2026&amp;token=1DCAD68B60EFD5F85C5D0C204B50D1DB5C258A9269F00BCC" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:8px 12px;margin-top:8px;font-size:12px;"><strong style="color:#059669;">💡 本院启示：</strong><span style="color:#166534;">ADC双抗持续火热，关注康方卡度尼利、恒瑞Nectin-4 ADC最新数据</span></div>
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026 年, 这 15 款「抗肿瘤新药」有望在中国获批上市</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 肿瘤新药 获批 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw571fTrFTM1K757IvkoVvR5TVqXa8Fplpd9QYbLV8ixbZUGUQKabVG4LhJv1rkTsto0WS6zJ4XmxPwx6zMhhYrpBPPAh0C2Mw4Kkx8PSwz1l7bgfV7J0oiajONGRDC8u3jJKGRsMAYI-Rt64pCixg_sL4VwYY1AWlL7D6GpYvVFFVwqhi08dzezn3LCXipsvGFE6sadfC1ZzG2E8RsmObDbtQ..&amp;type=2&amp;query=%E8%82%BF%E7%98%A4%E6%96%B0%E8%8D%AF %E8%8E%B7%E6%89%B9 2026&amp;token=1DCAD68B60EFD5F85C5D0C204B50D1DB5C258A9269F00BCC" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026肺癌病友必看:21款获批新药+6大免疫黑科技,横扫八大靶点,临床治愈之路再提速</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 肿瘤新药 获批 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw571fTrFTM1K757IvkoVvR5TVqXa8Fplpd9rNyYZY3s6XE_xwY1IZ0GDkeqYE0Zcmu8GnAj8q9TYU12fWDVe64Qum4ZYjNwQwAr9iKrfCF5SRRIFwtgO-fGIupbGfin4emncOVTd8cFwdrx2X1dqjsWwf-lReY7V3eIyGxf_QLxAw1ZEkenB0WRK1Z9c5piM2X43tC3Q2GcZhROJBjQH7pCxQ..&amp;type=2&amp;query=%E8%82%BF%E7%98%A4%E6%96%B0%E8%8D%AF %E8%8E%B7%E6%89%B9 2026&amp;token=1DCAD68B60EFD5F85C5D0C204B50D1DB5C258A9269F00BCC" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2025消化肿瘤药物获批全记录,2026谁将C位出道?</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 肿瘤新药 获批 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw571fTrFTM1K757IvkoVvR5TVqXa8Fplpd9wWQlmCzvOdxKVBDarg2FT4g-UJ2AXXs5m-UBIiLf0iki3tzoJSMB4dnzuTdoaGFmfyJhBuNMVNBn8bYhGK953-OMy9ewsy3V4On1gSpXrd9qIzqz0SwF1EWjmnRDXkdIaBVQPU-jqlydRSw8Yamnoo9f3PjUUww5SqyStzR8rFXm0CtGSSkZQQ..&amp;type=2&amp;query=%E8%82%BF%E7%98%A4%E6%96%B0%E8%8D%AF %E8%8E%B7%E6%89%B9 2026&amp;token=1DCAD68B60EFD5F85C5D0C204B50D1DB5C258A9269F00BCC" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026肿瘤治疗新希望!15款重磅新药国内有望获批</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 肿瘤新药 获批 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw571fTrFTM1K757IvkoVvR5TVqXa8Fplpd9ZqW9LYH2n62sszL3DJMumHJIzFzrLg5yFoYtp21KB3xOMpy9g8GoEOpIe9IMH5WfZtx3elevHPHwQ_EEiwVb_cdDMYImQ_Y2AayZEHch93m7WRUPcPlx2mo-OMZdiw2_IsZUeCa7iaCzz8QdNY5JB3HHYmCtJvKIn1gdP-dxWVjP28temKTOwg..&amp;type=2&amp;query=%E8%82%BF%E7%98%A4%E6%96%B0%E8%8D%AF %E8%8E%B7%E6%89%B9 2026&amp;token=1DCAD68B60EFD5F85C5D0C204B50D1DB5C258A9269F00BCC" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">君实生物 2026AACR 亮剑,双抗 + ADC 双管线突破,海外授权预期再升温</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 ADC双抗 突破 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57Sn7tRmInEEJ7IvkoVvR5TVqXa8Fplpd9aZBSOVZ_Uouiz7dJh-CAe21CPociB7rEAz1Lo1k6ROm2OgbWDjt72S5DBcDN8c2psssWPxic7xDz1KGi0F_cf5M6dDTKARcJOhdL_vTVL6l6LAsgK02pFMAbCAYzHNDGpOzyvXQ3vIZ-TnocE6cyBUarix5vz8dhyYbmoqjCPYKAFV_3u-a3OQ..&amp;type=2&amp;query=ADC%E5%8F%8C%E6%8A%97 %E7%AA%81%E7%A0%B4 2026&amp;token=1DCADFD967EED5F95B5D0B214B78799A5BAAAEE169F00BCE" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">中国抗体&amp;ADC药物行业一壁江山!第九届AntibodyChina 2026深度聚焦ADC技术革新、双抗机制进化,TCE开发实践及全球化布局!</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 ADC双抗 突破 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57Sn7tRmInEEJ7IvkoVvR5TVqXa8Fplpd9WWYq68MaWj1tmqtUbf7Y1vbJWTyZU9nbpibQA7snP_mVDcqmyFaWSwbyzgYJiGAGUBnx0jkB-9cfzLpdGngDgEIYv9Ap1BjXVZEjRcaEds3KYefS54WwHa82qGfKzouCzRjpyyDs4Lr42G4_l7DIYfoEt97jm4pep5e6fJJiE_EYJSSFPgfogQ..&amp;type=2&amp;query=ADC%E5%8F%8C%E6%8A%97 %E7%AA%81%E7%A0%B4 2026&amp;token=1DCADFD967EED5F95B5D0B214B78799A5BAAAEE169F00BCE" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">百利天恒双抗ADC:III期研究双终点阳性</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 ADC双抗 突破 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57Sn7tRmInEEJ7IvkoVvR5TVqXa8Fplpd9rPcTble376uZ_88S-7z64ILrBaxDwYH3G3o344OU7VHqu9XtONgIoZGgviDPR8edB46FfKxHPf8XzfxVy646XNGeTFb9pabEYEy1QF4ZsXefmJP6dQSUEHBfbhSTLaWCK_tojYuaOVuZvnEyJ7hK3w-elNPbjvbzaByBp4JKH3rzAjcIGepUqA..&amp;type=2&amp;query=ADC%E5%8F%8C%E6%8A%97 %E7%AA%81%E7%A0%B4 2026&amp;token=1DCADFD967EED5F95B5D0B214B78799A5BAAAEE169F00BCE" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+  <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:13px;"><strong style="color:#059669;">💡 业务启示：</strong><span style="color:#166534;">ADC双抗持续火热，关注康方卡度尼利、恒瑞Nectin-4 ADC最新数据</span></div>
+</div>
+
+<div class="dept-section" id="dept-内科/代谢">
+  <div class="dept-header">
+    <div class="dept-icon" style="background:#ede9fe;">❤️</div>
+    <div class="dept-info">
+      <div style="font-size:15px;font-weight:700;color:#1f2937;">内科/代谢</div>
+      <div style="font-size:12px;color:#6b7280;margin-top:2px;">10条动态</div>
+    </div>
+  </div>
+  
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026 GLP-1「减重宇宙」全面开战:双寡头版图松动、每月一针与口服小分子抢滩,185 亿美元交易潮背后的中小药企窗口期</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 GLP-1 减重 2026最新</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57GGOEO7lnAq97IvkoVvR5TVqXa8Fplpd9i4P3CmrnJ9bSX1PER0FsfTiWqQXpMe7QV4sABHUhwKB6QKQ7QoEBXJcpLjeMMFQMQwuiQYCRJHdV_oRVybxdENfSS9bgr5wjXbxCOZR8vJsKFMDwgTq1dxwvzIi_vQPzaVlIlfJvHCEtP5mGSooOuotBDjPl0PRbKLQceEkWnCdj32-j2KiwUw..&amp;type=2&amp;query=GLP-1 %E5%87%8F%E9%87%8D 2026%E6%9C%80%E6%96%B0&amp;token=1DCAE9A46BE3D8F45750062D476ECDC757F0D8C369F00BCF" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:8px 12px;margin-top:8px;font-size:12px;"><strong style="color:#059669;">💡 本院启示：</strong><span style="color:#166534;">替尔泊肽登顶药王，GLP-1减重赛道竞争加剧，关注本院代谢门诊建设</span></div>
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">GLP-1不只是＂减肥神药＂:2026年你必须更新的处方认知&mdash;&mdash;从Nature最新遗传学研究到口服剂型获批,一文梳理GLP-1类药物的临</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 GLP-1 减重 2026最新</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57GGOEO7lnAq97IvkoVvR5TVqXa8Fplpd9a-UCRI7uC3paKEUMSA8fGf2A5LUoZdrGFHmeTXNpYQGPsaRzPWzXWEfqeVnj_N_R7BLrDn8PzMiKTUdfJLPKw0BXHBQAeFH7-_kiUffJt-aJzw-1cQqIzpU_7hPQmLCFepzi2Jgou_nqlgpsnXtVaggzaMqROzSyXqguQizXgORAe0f8bRARvQ..&amp;type=2&amp;query=GLP-1 %E5%87%8F%E9%87%8D 2026%E6%9C%80%E6%96%B0&amp;token=1DCAE9A46BE3D8F45750062D476ECDC757F0D8C369F00BCF" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">重塑2026的22款药物,减重独占5席:GLP-1正在重新定义全球药市</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 GLP-1 减重 2026最新</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57GGOEO7lnAq97IvkoVvR5TVqXa8Fplpd9Ln-bf0bONCrfLvJuMkpRb4fI-6e4eQ-2DykQDNO0yuBg2Sz-rT_0hGKBdAlxsBLJBWxLROHdNKAt7s7iEJOEjPsGQa3XVapE7kPJ8Y4ejRPnIgrZot4SSXfij-PPQBLep9EUTDhuFmffBgzOrHRI2uB7yqbHQYOGA3JtFU7pPBJhWLv6O878UA..&amp;type=2&amp;query=GLP-1 %E5%87%8F%E9%87%8D 2026%E6%9C%80%E6%96%B0&amp;token=1DCAE9A46BE3D8F45750062D476ECDC757F0D8C369F00BCF" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">GLP-1减重疗法综合比较报告(20260331)</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 GLP-1 减重 2026最新</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57GGOEO7lnAq97IvkoVvR5TVqXa8Fplpd99pdhNO8yNeUYsaTMjIOPL9erLjnocEmTZ0Aw0ld3aSeTwQ3Py6yIUP6Iljwsr5hvKLWeBCODolEXQAInCCFNY4emCtBWQypIU1JfERGVGst4TZAB2526_zn8MCuPN6UDWN2H12sIRcVewLk3jDP-0QnkvanRreylq27G7I10NixQ_LeJW-Rhtg..&amp;type=2&amp;query=GLP-1 %E5%87%8F%E9%87%8D 2026%E6%9C%80%E6%96%B0&amp;token=1DCAE9A46BE3D8F45750062D476ECDC757F0D8C369F00BCF" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">用GLP-1减重,恶心没食欲是&ldquo;起效&rdquo;?错!指南认为舒适才是长期减重的关键!</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 GLP-1 减重 2026最新</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57GGOEO7lnAq97IvkoVvR5TVqXa8Fplpd9oo9mJKsRM157qmFzDfm18pU9IHEpZOM7NxVKpQyY_MYAejYNkxv_gGP5yykPr2zQLd2DE-5zi9tLc--BkHo87D2GSXpz55MjpdfZiZG1-gJCxpvi7N1AsMjUy4m5gxCQ1FDshTzOX6SCzHClfmrttEZPERka9Y8VA9muyGR44wpOJBjQH7pCxQ..&amp;type=2&amp;query=GLP-1 %E5%87%8F%E9%87%8D 2026%E6%9C%80%E6%96%B0&amp;token=1DCAE9A46BE3D8F45750062D476ECDC757F0D8C369F00BCF" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">替尔泊肽联合胰岛素泵:为肥胖1型糖尿病患者带来三重获益!</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 替尔泊肽 糖尿病 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57A1R0eLd1Iux7IvkoVvR5TVqXa8Fplpd9ufWqpks-xoKSkgALgCA-WtLmmR16un4EV116DTnW-zvlodbNpY3HbWumZRAdLCvzrv0bDtWMX6qQIa-kyQkJYA2CE8PAI-VJ-H_9oy7rAgrBKr4im7RqkBHmvCBXut0GEAvi9Y1yPKRGj9UOQNSKhcfQFTgU4_BkO9PTewziA1NOJBjQH7pCxQ..&amp;type=2&amp;query=%E6%9B%BF%E5%B0%94%E6%B3%8A%E8%82%BD %E7%B3%96%E5%B0%BF%E7%97%85 2026&amp;token=1DCAF439F364416CD0C980ABDF9F1F37D0214B7469F00BD1" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">4个月减重9.8kg,纤维化风险降低&mdash;&mdash;替尔泊肽在2型糖尿病中的代谢改善与肝脏获益 | 2026 AACE</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 替尔泊肽 糖尿病 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57A1R0eLd1Iux7IvkoVvR5TVqXa8Fplpd9W34x4ecuIt7YCUe7KRFhGbDD1DqbpHz1-g-wl0AZkfV1GEX1fPv9E8b1T2fSgucEVgP86XwJEjEDxjnzj0Cu6K4x7Ws3NU9R8PnR2UleY8I84SE9Voj2vsKViGhWjmhu9yGXj9TcpCZkJyjOfq2fwd7DH_D9N1yySWuuPpuDFP56VKrzu_4XKA..&amp;type=2&amp;query=%E6%9B%BF%E5%B0%94%E6%B3%8A%E8%82%BD %E7%B3%96%E5%B0%BF%E7%97%85 2026&amp;token=1DCAF439F364416CD0C980ABDF9F1F37D0214B7469F00BD1" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">糖尿病全球新&ldquo;药王&rdquo;替尔泊肽登顶!</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 替尔泊肽 糖尿病 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57A1R0eLd1Iux7IvkoVvR5TVqXa8Fplpd9qqL-nwA4FM_KQIiIkuwG5ePLNE8UENEVGM66H3HLoBrVVpOKo4GaKI15R75BgGk3WIvbReNYKt4jPGV-evy204eZ0BnlaZobnq49vv_2jAM5FyTfQRzyTDRSN1GoT26ZkKEj99aQ6sbvGZ12AF_4SiNGrN-2XZCHmX-EKohmbU3P28temKTOwg..&amp;type=2&amp;query=%E6%9B%BF%E5%B0%94%E6%B3%8A%E8%82%BD %E7%B3%96%E5%B0%BF%E7%97%85 2026&amp;token=1DCAF439F364416CD0C980ABDF9F1F37D0214B7469F00BD1" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+  <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:13px;"><strong style="color:#059669;">💡 业务启示：</strong><span style="color:#166534;">替尔泊肽登顶药王，GLP-1减重赛道竞争加剧，关注本院代谢门诊建设</span></div>
+</div>
+
+<div class="dept-section" id="dept-皮肤科">
+  <div class="dept-header">
+    <div class="dept-icon" style="background:#ede9fe;">🧴</div>
+    <div class="dept-info">
+      <div style="font-size:15px;font-weight:700;color:#1f2937;">皮肤科</div>
+      <div style="font-size:12px;color:#6b7280;margin-top:2px;">2条动态</div>
+    </div>
+  </div>
+  
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026医改攻坚|6大核心科室必守职责,书记院长必看!</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 医疗改革 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57CShls2fEFAh7IvkoVvR5TVqXa8Fplpd9xBXqdpLxfdrPv9yhNFpf9lGHZ1nGoDmJRXRWjjch2C00SIa9mMcXcLbcl5HVtAUZg7pRq1XEHpgHhgB9w2R70D1CcWoI8QKiomSSJRM4mf8SiRO8ErdIyvQsSgsyJD6E5-vgRJtHFxZYuLl0s21qMSVCobSdVzRw691pQTg72lVflztgI7RZ1g..&amp;type=2&amp;query=%E5%8C%BB%E7%96%97%E6%94%B9%E9%9D%A9 2026&amp;token=1DCAA03255DEE7C96A6F3A1266FFD0196A425AE569F00BC4" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026医改定调&ldquo;强基稳二控三&rdquo;,各级医院转型指南请收好</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 医疗改革 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57CShls2fEFAh7IvkoVvR5TVqXa8Fplpd9ZuXlfReWK0crQ4snUzZ9mgF9ymmDPymsTOhQNYTgs2vzUip9kKya1n_SE01OvNcF1sRP9DF8GrqwF68e-JaKOvSSx5r76WE_m5Ih5OtfErdXB7eaoQAl4pmRPb_UY14DMg3eGvcf4jLUesHBDiFTMelMmbUSL-LZqC_dx8cJgMv2CsG6-xMgzQ..&amp;type=2&amp;query=%E5%8C%BB%E7%96%97%E6%94%B9%E9%9D%A9 2026&amp;token=1DCAA03255DEE7C96A6F3A1266FFD0196A425AE569F00BC4" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+  
+</div>
+
+<div class="dept-section" id="dept-口腔科">
+  <div class="dept-header">
+    <div class="dept-icon" style="background:#ede9fe;">🦷</div>
+    <div class="dept-info">
+      <div style="font-size:15px;font-weight:700;color:#1f2937;">口腔科</div>
+      <div style="font-size:12px;color:#6b7280;margin-top:2px;">3条动态</div>
+    </div>
+  </div>
+  
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">医美行业财税合规&ldquo;新纪元&rdquo;:2026年监管升级,这些红线千万不能碰</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 医美合规 监管 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57vGDAbkCOQZZ7IvkoVvR5TVqXa8Fplpd9CsYmUG_iUVrYNxZs6YUIDRxo2laL4DY0ilVIw3-e8bnI2IPnYmJgifcsBmMBoiZSDqN_-UWVKzgQpMNbv5fQjy4sR9mdJA9zvvQ0FkqvDW1gNW7mUaODMBLvFm8x7jXpfmdFUU_CT8TpG6Nnzt3KjJPRSwOQmN89qntX-ZyhSLnP28temKTOwg..&amp;type=2&amp;query=%E5%8C%BB%E7%BE%8E%E5%90%88%E8%A7%84 %E7%9B%91%E7%AE%A1 2026&amp;token=1DCB059A5CD4EEC36166301A701A1368616A094D69F00BD3" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:8px 12px;margin-top:8px;font-size:12px;"><strong style="color:#059669;">💡 本院启示：</strong><span style="color:#166534;">口腔集采深化，本院可参考好佰年公益活动模式，强化社区义诊</span></div>
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">2026医美合规风暴全解析_行业深度报告</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 医美合规 监管 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57vGDAbkCOQZZ7IvkoVvR5TVqXa8Fplpd9m2RsK3Wl3sYc7T1g6bGbapu2ZTK_AHjcodu1z62R_9nCZsTEFAsoqjXBRYZoUL6Xn4fhwIkketcUicRMTOwZSIEczkzHwAOl28xbuyf1QuBKY2bPBJkC0Jyr0p2NRac-uVtgYvhQ2UAe0iMLpjQLlW5_I-AauMsgDUfYOodfpRzuL0unUdKkuw..&amp;type=2&amp;query=%E5%8C%BB%E7%BE%8E%E5%90%88%E8%A7%84 %E7%9B%91%E7%AE%A1 2026&amp;token=1DCB059A5CD4EEC36166301A701A1368616A094D69F00BD3" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">泰和泰研析 | 2026年医美机构合规经营指南:六大高频运营风险的法律解构与防控路径</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+     <span style="color:#9ca3af;font-size:11px;">📢 医美合规 监管 2026</span>
+  </div>
+  
+  <a href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57vGDAbkCOQZZ7IvkoVvR5TVqXa8Fplpd9XWr7Hv4CbfuhQc7QFUKRLxAor9QwkP_dFgrxH6QJJutQcZcg0N2_8JiEn5KwO91yUZWjEB9SeSAe4-QmiQ4lenHOiJYu7Jza83M5JvvHS3GAQmgPvG5LQh01tZOpuEvOgRwpwbhWbhtMu013tUSYBY_sidN70nzVQz8cFheTZwHs46dn8Efgxg..&amp;type=2&amp;query=%E5%8C%BB%E7%BE%8E%E5%90%88%E8%A7%84 %E7%9B%91%E7%AE%A1 2026&amp;token=1DCB059A5CD4EEC36166301A701A1368616A094D69F00BD3" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+  <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:13px;"><strong style="color:#059669;">💡 业务启示：</strong><span style="color:#166534;">口腔集采深化，本院可参考好佰年公益活动模式，强化社区义诊</span></div>
+</div>
+
+<div class="dept-section" id="dept-本院相关">
+  <div class="dept-header">
+    <div class="dept-icon" style="background:#ede9fe;">⭐</div>
+    <div class="dept-info">
+      <div style="font-size:15px;font-weight:700;color:#1f2937;">本院相关</div>
+      <div style="font-size:12px;color:#6b7280;margin-top:2px;">30条动态</div>
+    </div>
+  </div>
+  
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;border-left:4px solid #e11d48;background:#fff5f7;">
+  <span style="background:#e11d48;color:#fff;font-size:10px;padding:1px 6px;border-radius:4px;margin-right:6px;">本院</span><strong style="font-size:14px;color:#1f2937;">我院“港澳药械通”再添新成员，美罗培南法硼巴坦正式启用，耐药感染有新解</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#9ca3af;font-size:11px;">📅 2026-04-26</span> <span style="color:#9ca3af;font-size:11px;">📢 本院</span>
+  </div>
+  
+  <a href="https://mp.weixin.qq.com/s/jRBlH7HWWDuKPhvVNQm67Q" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:8px 12px;margin-top:8px;font-size:12px;"><strong style="color:#059669;">💡 本院启示：</strong><span style="color:#166534;">结合本院最新动态，关注业务机会和服务升级方向</span></div>
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;border-left:4px solid #e11d48;background:#fff5f7;">
+  <span style="background:#e11d48;color:#fff;font-size:10px;padding:1px 6px;border-radius:4px;margin-right:6px;">本院</span><strong style="font-size:14px;color:#1f2937;">跨国抗癌！60岁外籍患者的口腔癌“换脸”重建记</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#9ca3af;font-size:11px;">📅 2026-04-26</span> <span style="color:#9ca3af;font-size:11px;">📢 本院</span>
+  </div>
+  
+  <a href="https://mp.weixin.qq.com/s/AXbh7k0RxMmHKik0MSjX5Q" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;border-left:4px solid #e11d48;background:#fff5f7;">
+  <span style="background:#e11d48;color:#fff;font-size:10px;padding:1px 6px;border-radius:4px;margin-right:6px;">本院</span><strong style="font-size:14px;color:#1f2937;">致敬白衣后浪与坚守者｜佛山禅医护士节专项表彰（一）</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#9ca3af;font-size:11px;">📅 2026-04-26</span> <span style="color:#9ca3af;font-size:11px;">📢 本院</span>
+  </div>
+  
+  <a href="https://mp.weixin.qq.com/s/S98u4lUK0H1wr43kk2FbnQ" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;border-left:4px solid #e11d48;background:#fff5f7;">
+  <span style="background:#e11d48;color:#fff;font-size:10px;padding:1px 6px;border-radius:4px;margin-right:6px;">本院</span><strong style="font-size:14px;color:#1f2937;">术后第一碗汤暖宫又补气血~ 广东专属小月子饮食计划，建议收藏！</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#9ca3af;font-size:11px;">📅 2026-04-26</span> <span style="color:#9ca3af;font-size:11px;">📢 本院</span>
+  </div>
+  
+  <a href="https://mp.weixin.qq.com/s/a-3PFvlA1JrIVbV5REpQGg" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;border-left:4px solid #e11d48;background:#fff5f7;">
+  <span style="background:#e11d48;color:#fff;font-size:10px;padding:1px 6px;border-radius:4px;margin-right:6px;">本院</span><strong style="font-size:14px;color:#1f2937;">医校联动护成长~佛山禅医走进十四中，解锁青春期健康与安全密码</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#9ca3af;font-size:11px;">📅 2026-04-26</span> <span style="color:#9ca3af;font-size:11px;">📢 本院</span>
+  </div>
+  
+  <a href="https://mp.weixin.qq.com/s/QbQpspFHSG0pz2HzMWUj-w" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;border-left:4px solid #e11d48;background:#fff5f7;">
+  <span style="background:#e11d48;color:#fff;font-size:10px;padding:1px 6px;border-radius:4px;margin-right:6px;">本院</span><strong style="font-size:14px;color:#1f2937;">关于暂停《出生医学证明》签发业务的公告</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#9ca3af;font-size:11px;">📅 2026-04-26</span> <span style="color:#9ca3af;font-size:11px;">📢 本院</span>
+  </div>
+  
+  <a href="https://mp.weixin.qq.com/s/Kfsf0ninpMJTn5Brda7HoA" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;border-left:4px solid #e11d48;background:#fff5f7;">
+  <span style="background:#e11d48;color:#fff;font-size:10px;padding:1px 6px;border-radius:4px;margin-right:6px;">本院</span><strong style="font-size:14px;color:#1f2937;">高端访谈 | 胡航董事长对话佛山传媒：解读复星禅医国际医疗高质量发展之路</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#9ca3af;font-size:11px;">📅 2026-04-20</span> <span style="color:#9ca3af;font-size:11px;">📢 本院</span>
+  </div>
+  
+  <a href="https://mp.weixin.qq.com/s/qYQ_7zqknKPA55GYIxwK9A" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;border-left:4px solid #e11d48;background:#fff5f7;">
+  <span style="background:#e11d48;color:#fff;font-size:10px;padding:1px 6px;border-radius:4px;margin-right:6px;">本院</span><strong style="font-size:14px;color:#1f2937;">一张订单点燃全城善意！佛山30号病床女孩阶段性出院，爱心接力未停</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#9ca3af;font-size:11px;">📅 2026-04-20</span> <span style="color:#9ca3af;font-size:11px;">📢 本院</span>
+  </div>
+  
+  <a href="https://mp.weixin.qq.com/s/Vqeso-6zCGjoD8Y4TlYwow" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+  <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:13px;"><strong style="color:#059669;">💡 业务启示：</strong><span style="color:#166534;">结合本院最新动态，关注业务机会和服务升级方向</span></div>
+</div>
+
+<div class="dept-section" id="dept-广佛友商动态">
+  <div class="dept-header">
+    <div class="dept-icon" style="background:#ede9fe;">🏥</div>
+    <div class="dept-info">
+      <div style="font-size:15px;font-weight:700;color:#1f2937;">广佛友商动态</div>
+      <div style="font-size:12px;color:#6b7280;margin-top:2px;">15条动态</div>
+    </div>
+  </div>
+  
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">12小时成功实施高难度“肝肾联合移植+双侧病肾切除”手术</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#9ca3af;font-size:11px;">📅 2026-04-27</span> <span style="color:#9ca3af;font-size:11px;">📢 佛山市第一人民医院</span>
+  </div>
+  
+  <a href="https://mp.weixin.qq.com/s/tpkLZT1fjstHld1PPtc3MQ" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:8px 12px;margin-top:8px;font-size:12px;"><strong style="color:#059669;">💡 本院启示：</strong><span style="color:#166534;">关注竞争对手动态，学习可借鉴的运营和服务模式</span></div>
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">二十年后，跨越千里再来找你：那袋花生，是他最重的谢礼</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#9ca3af;font-size:11px;">📅 2026-04-27</span> <span style="color:#9ca3af;font-size:11px;">📢 佛山市第一人民医院</span>
+  </div>
+  
+  <a href="https://mp.weixin.qq.com/s/AU7DjZu-sGjBlSCv3D4F-w" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">我院心外科成功救治急性心梗后室间隔穿孔危重患者</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#9ca3af;font-size:11px;">📅 2026-04-27</span> <span style="color:#9ca3af;font-size:11px;">📢 佛山市第一人民医院</span>
+  </div>
+  
+  <a href="https://mp.weixin.qq.com/s/dy7JlTKS-A-mSp0NfVutBw" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">生娃新体验 | 产科妇产中心：一站式产检，套房、标间舒适又私密，头疗、沐足好舒服~</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#9ca3af;font-size:11px;">📅 2026-04-27</span> <span style="color:#9ca3af;font-size:11px;">📢 佛山市妇幼保健院订阅号</span>
+  </div>
+  
+  <a href="https://mp.weixin.qq.com/s/mU05gihVWIa_h2b4mCiBHQ" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">急救技能护万家！佛山妇幼举办急救技能培训开放日活动</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#9ca3af;font-size:11px;">📅 2026-04-27</span> <span style="color:#9ca3af;font-size:11px;">📢 佛山市妇幼保健院订阅号</span>
+  </div>
+  
+  <a href="https://mp.weixin.qq.com/s/pqpPJfKCqv-AOSAcaZjAqg" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">“点评+培训”双管齐下！佛山妇幼赴信宜妇幼开展质量管理专项帮扶</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#9ca3af;font-size:11px;">📅 2026-04-27</span> <span style="color:#9ca3af;font-size:11px;">📢 佛山市妇幼保健院订阅号</span>
+  </div>
+  
+  <a href="https://mp.weixin.qq.com/s/_-RG8EsFqY05_vJEXAPWLQ" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">有位“强的可怕”的孕妈，往返广佛练就一身绝技，生娃直呼“救了大命了”</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#9ca3af;font-size:11px;">📅 2026-04-27</span> <span style="color:#9ca3af;font-size:11px;">📢 佛山市妇幼保健院</span>
+  </div>
+  
+  <a href="https://mp.weixin.qq.com/s/NLbs7U2Q87J_x7hLo36sOw" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+
+<div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px;">
+  <strong style="font-size:14px;color:#1f2937;">“别染发”！央视名嘴经历了什么，妈都认不出……</strong>
+  <div style="margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#9ca3af;font-size:11px;">📅 2026-04-27</span> <span style="color:#9ca3af;font-size:11px;">📢 佛山市妇幼保健院</span>
+  </div>
+  
+  <a href="https://mp.weixin.qq.com/s/t-7AZfxeqkyK1O2rxqS68A" target="_blank" style="color:#2563eb;font-size:12px;margin-top:4px;display:block;">🔗 原文链接</a>
+  
+</div>
+  <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:13px;"><strong style="color:#059669;">💡 业务启示：</strong><span style="color:#166534;">关注竞争对手动态，学习可借鉴的运营和服务模式</span></div>
+</div>
+</div>
+
+<div class="footer">
+  <p>广佛医疗行业动态报告 | 生成日期：2026-04-28 | 数据来源：微信公众号(WeWe RSS) + 微信搜狗搜索</p>
+  <p>本报告仅供内部参考，不对外传播</p>
+</div>
+
+<script>
+function switchTab(id){
+  document.querySelectorAll('.dept-section').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el=>el.classList.remove('active'));
+  var target = document.getElementById('dept-'+id.replace('tab-',''));
+  if(target) target.classList.add('active');
+  event.target.classList.add('active');
+}
+// Auto show first tab
+document.querySelectorAll('.dept-section')[0]?.classList.add('active');
+</script>
+</body>
+</html>
