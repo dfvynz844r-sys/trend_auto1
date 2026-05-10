@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>广佛医疗行业动态 · 本周 05/09-05/15（5.10更新）</title>
+<script>if(sessionStorage.getItem('_rpt_auth')!=='ok'){document.addEventListener('DOMContentLoaded',function(){var p=prompt('请输入查看密码：');if(p==='888666'){sessionStorage.setItem('_rpt_auth','ok');}else{document.documentElement.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;color:#999;font-size:18px;">无权访问</div>';}});}</script>
+<style>
+:root{--bg:#f0f2f5;--card:#ffffff;--accent:#e11d48;--accent2:#2563eb;--accent3:#059669;--text:#1f2937;--muted:#6b7280;--border:#e5e7eb;--shadow:0 1px 3px rgba(0,0,0,.08);--shadow-hover:0 4px 12px rgba(0,0,0,.12);--green:#059669;--orange:#d97706;--purple:#7c3aed;--cyan:#0891b2;--pink:#db2777;--gold:#b45309;--insight-bg:#f0fdf4;--insight-border:#86efac;--warn-bg:#fef2f2;--warn-border:#fca5a5;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+.header{background:linear-gradient(135deg,#ffffff 0%,#f8fafc 100%);border-bottom:1px solid var(--border);padding:20px 28px;position:sticky;top:0;z-index:100;box-shadow:var(--shadow);}
+.header h1{font-size:18px;font-weight:700;color:var(--text);}
+.header .sub{font-size:12px;color:var(--muted);margin-top:4px;}
+.stats-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+.stat{background:#f9fafb;border:1px solid var(--border);border-radius:10px;padding:6px 14px;text-align:center;font-size:12px;}
+.stat strong{display:block;font-size:16px;font-weight:700;}
+strong.c1{color:var(--accent2);} strong.c2{color:var(--accent);} strong.c3{color:var(--cyan);}
+strong.c4{color:var(--green);} strong.c5{color:var(--purple);} strong.c6{color:var(--orange);}
+.tag-label{font-size:11px;color:var(--muted);}
+.tab-nav{display:flex;flex-wrap:wrap;gap:4px;padding:12px 28px;background:#fff;border-bottom:1px solid var(--border);}
+.tab-btn{background:#f3f4f6;border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:12px;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap;}
+.tab-btn:hover{color:var(--text);border-color:var(--accent2);background:#eff6ff;}
+.tab-btn.active{background:var(--accent2);color:#fff;border-color:var(--accent2);font-weight:600;}
+.content{max-width:1100px;margin:0 auto;padding:20px;}
+.dept-section{display:none;}
+.dept-section.active{display:block;}
+.dept-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;background:var(--card);border-radius:14px;padding:16px;border:1px solid var(--border);box-shadow:var(--shadow);flex-wrap:wrap;}
+.dept-icon{font-size:26px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;flex-shrink:0;}
+.dept-info{flex:1;min-width:200px;}
+.dept-info h2{font-size:16px;color:var(--text);margin-bottom:3px;}
+.dept-meta{font-size:11px;color:var(--muted);}
+.count-badge{font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;white-space:nowrap;color:#fff;}
+.posts-grid{display:flex;flex-direction:column;gap:10px;}
+.post-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .2s;box-shadow:var(--shadow);}
+.post-card:hover{box-shadow:var(--shadow-hover);border-color:#cbd5e1;}
+.post-header{display:flex;align-items:start;gap:10px;padding:12px 14px 8px;}
+.post-type-icon{font-size:20px;flex-shrink:0;width:36px;height:36px;background:#f9fafb;border-radius:10px;display:flex;align-items:center;justify-content:center;}
+.post-header-info{flex:1;}
+.post-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px;line-height:1.4;}
+.post-time{font-size:11px;color:var(--muted);}
+.post-body{font-size:12px;color:#374151;padding:0 14px 10px;line-height:1.7;}
+.post-insight{font-size:11px;color:#166534;padding:8px 14px 10px;line-height:1.6;background:var(--insight-bg);border-top:1px dashed var(--insight-border);}
+.post-insight strong{color:var(--accent3);}
+.post-self-insight{background:#fff1f2;border-top:1px dashed #fda4af;}
+.post-self-insight strong{color:var(--accent);}
+.post-footer{display:flex;align-items:center;flex-wrap:wrap;gap:5px;padding:8px 14px;border-top:1px solid #f3f4f6;}
+.tag{background:#f3f4f6;border:1px solid var(--border);border-radius:6px;padding:2px 7px;font-size:11px;color:var(--text);}
+.tag-hospital{border-color:#bfdbfe;color:var(--accent2);background:#eff6ff;}
+.tag-self{border-color:#fecdd3;color:var(--accent);background:#fff1f2;}
+.tag-prd{border-color:#fde68a;color:var(--gold);background:#fffbeb;}
+.post-link{margin-left:auto;font-size:11px;color:var(--accent2);text-decoration:none;white-space:nowrap;}
+.post-link:hover{text-decoration:underline;}
+.footer{text-align:center;padding:20px;font-size:11px;color:var(--muted);border-top:1px solid var(--border);margin-top:30px;background:#fff;}
+.badge-new{display:inline-block;background:#dc2626;color:#fff;font-size:10px;font-weight:700;padding:1px 6px;border-radius:4px;margin-right:4px;vertical-align:middle;}
+.archive-list{list-style:none;padding:0;}
+.archive-list li{padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.archive-list a{color:var(--accent2);text-decoration:none;}
+.archive-list a:hover{text-decoration:underline;}
+.self-card{border-left:3px solid var(--accent)!important;}
+.warn-card{border-left:3px solid #ef4444!important;background:var(--warn-bg);}
+.warn-card .post-insight{background:#fef2f2;border-top:1px dashed var(--warn-border);color:#991b1b;}
+.warn-card .post-insight strong{color:#dc2626;}
+
+  .insight-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px;box-shadow:var(--shadow);}
+  .insight-card h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px;}
+  .insight-card p{font-size:12px;color:#374151;line-height:1.8;margin:0;}
+  .highlight-box{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:16px 18px;margin-top:4px;}
+  .highlight-box h3{font-size:14px;font-weight:700;color:#92400e;margin-bottom:10px;}
+  .highlight-box ul{margin:0;padding-left:20px;}
+  .highlight-box li{font-size:12px;color:#78350f;line-height:2;}
+  .sub-section-title{font-size:13px;font-weight:600;color:var(--text);margin:18px 0 10px;padding-left:10px;border-left:3px solid var(--accent2);display:flex;align-items:center;gap:6px;}
+  .sub-section-title:first-child{margin-top:0;}
+  .sub-section-title .sub-count{font-size:11px;font-weight:400;color:var(--muted);background:#f3f4f6;padding:2px 8px;border-radius:10px;}
+  .tag-topic{border-color:#d1fae5;color:#065f46;background:#ecfdf5;}
+
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>广佛医疗行业动态 · 本周 05/09-05/15（5.10更新）</h1>
+  <div class="sub">覆盖珠三角三甲 + 连锁医疗机构 · 本周 05/09-05/15 滚动更新 · 5.10更新</div>
+  <div class="stats-row">
+    <div class="stat"><strong class="c1">5</strong><span class="tag-label">宏观趋势</span></div>
+    <div class="stat"><strong class="c2">2</strong><span class="tag-label">妇产</span></div>
+    <div class="stat"><strong class="c3">2</strong><span class="tag-label">儿科</span></div>
+    <div class="stat"><strong class="c4">1</strong><span class="tag-label">外科</span></div>
+    <div class="stat"><strong class="c5">4</strong><span class="tag-label">肿瘤</span></div>
+    <div class="stat"><strong class="c6">3</strong><span class="tag-label">内科</span></div>
+    <div class="stat"><strong class="c5">0</strong><span class="tag-label">皮肤</span></div>
+    <div class="stat"><strong class="c1">1</strong><span class="tag-label">口腔</span></div>
+    <div class="stat" style="background:#f3f4f6;"><strong style="color:var(--text);">18</strong><span class="tag-label">已溯源</span></div>
+  </div>
+</div>
+<div class="tab-nav">
+<button class="tab-btn" onclick="showTab('宏观')" id="tab-宏观">宏观趋势</button>
+<button class="tab-btn" onclick="showTab('妇产')" id="tab-妇产">妇产</button>
+<button class="tab-btn" onclick="showTab('儿科')" id="tab-儿科">儿科</button>
+<button class="tab-btn" onclick="showTab('外科')" id="tab-外科">外科</button>
+<button class="tab-btn" onclick="showTab('肿瘤')" id="tab-肿瘤">肿瘤</button>
+<button class="tab-btn" onclick="showTab('内科')" id="tab-内科">内科</button>
+<button class="tab-btn" onclick="showTab('皮肤')" id="tab-皮肤">皮肤科</button>
+<button class="tab-btn" onclick="showTab('口腔')" id="tab-口腔">口腔科</button>
+<button class="tab-btn" onclick="showTab('启示')" id="tab-启示">业务启示</button>
+<button class="tab-btn" onclick="showTab('历史')" id="tab-历史">历史存档</button>
+</div>
+<div class="content">
+
+<!-- 宏观趋势 -->
+<div class="dept-section active" id="sec-宏观">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#eff6ff;">🏛️</div>
+  <div class="dept-info"><h2>宏观趋势（政策 / 价格改革 / 国际医疗 / 消费医疗）</h2>
+    <div class="dept-meta">全国 / 广东 / 广佛政策与行业动态 · 2026.5.9-5.15 · 珠三角优先 · 全部已溯源</div></div>
+  <div class="count-badge" style="background:var(--accent2);">5 条</div>
+</div>
+<div class="posts-grid">
+<!-- POSTS_宏观 -->
+<div class="sub-section-title">📌 政策风向 <span class="sub-count">4条</span></div>
+<div class="post-card" data-date="2026-05-07">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">2026年度“深圳惠民保”升级上线</div>
+      <div class="post-time">2026-05-07 · 晶报</div>
+    </div>
+  </div>
+  <div class="post-body">2026年度“深圳惠民保”正式开启参保，保费88元/人/年四年不涨价，年度总保额超400万元。该产品为深圳人专属普惠医疗保障，政府指导，个账可付，不限健康，全家可保，参保时间截至2026年6月30日。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">政策·医保</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260507A03KSB00?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+<div class="post-card" data-date="2026-05-07">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">第六批耗材国采2026年5月落地，药物球囊1677-6015元，泌尿耗材60-1537元</div>
+      <div class="post-time">2026-05-07 · 金融界</div>
+    </div>
+  </div>
+  <div class="post-body">第六批国家组织高值医用耗材集采于2026年5月进入落地密集期，涉及市场规模约110亿元。227家企业投标，202家企业的440个产品中选，中选价格区间已公开，药物涂层球囊价格1677-6015元，泌尿耗材60-1537元。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">政策·医保</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260507A05TPK00?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+<div class="post-card" data-date="2026-05-04">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">广东长护险扩围！失能老人看病护理可报销，最高报90%</div>
+      <div class="post-time">2026-05-04 · 养老金规划站</div>
+    </div>
+  </div>
+  <div class="post-body">2026年起，长期护理保险在广东全省推开，覆盖因年老、疾病或伤残导致生活无法自理的老人。参保家庭可享受上门护理及医疗费用报销，最高报销比例达90%，有效减轻失能老人照护负担。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">政策·医保</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260504A04DOH00?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+<div class="post-card" data-date="2026-04-27">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">机器人手术“明码标价”，行业迎来商业化转折点</div>
+      <div class="post-time">2026-04-27 · 第一财经</div>
+    </div>
+  </div>
+  <div class="post-body">广东省医保局近日就手术机械臂辅助操作相关收费公开征求意见，落实国家医保局年初印发的《手术与治疗辅助操作类医疗服务价格项目立项指南（试行）》。此前湖南省已发文对接，将三类手术机械臂价格区间分层定价，推动行业商业化进程。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">政策·医保</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260427A08D9P00?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+<div class="sub-section-title">📌 价格改革 & 集采 <span class="sub-count">1条</span></div>
+<div class="post-card" data-date="2026-05-08">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">集采降价叠加肝素低谷 千红制药：创新药如期推进，制剂业务“挑大梁”|直击业绩会</div>
+      <div class="post-time">2026-05-08 · 财联社</div>
+    </div>
+  </div>
+  <div class="post-body">千红制药在业绩说明会上表示，核心创新药均按计划推进，但全球肝素原料药市场仍处低迷期，集采降价叠加影响导致一季度业绩下滑。目前制剂业务构成业绩主要支撑，投资者关注肝素行业波动及股价走势。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">价格改革</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260508A08JB500?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- 妇产 -->
+<div class="dept-section" id="sec-妇产">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#fce7f3;">👶</div>
+  <div class="dept-info"><h2>妇产（妇科 / 产科 / 生殖 / 产后）</h2>
+    <div class="dept-meta">全国 / 广东 / 广佛政策与行业动态 · 2026.5.9-5.15 · 珠三角优先 · 全部已溯源</div></div>
+  <div class="count-badge" style="background:var(--accent);">2 条</div>
+</div>
+<div class="posts-grid">
+<!-- POSTS_妇产 -->
+<div class="sub-section-title">📌 辅助生殖 & 产前诊断 <span class="sub-count">2条</span></div>
+<div class="post-card" data-date="2026-05-08">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">产科一站式24小时响应！佛山首个产科“指挥中枢”揭牌</div>
+      <div class="post-time">2026-05-08 · 广州日报</div>
+    </div>
+  </div>
+  <div class="post-body">5月8日，佛山市妇幼保健院产科管控中心在新城院区揭牌，集孕产妇急诊接诊、急救调度、入院分级分流、急危重症术前准备于一体，助推全市孕产妇全周期管理服务升级。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">辅助生殖</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260508A072IX00?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+<div class="post-card" data-date="2026-04-25">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">全球生殖遗传学术盛会首次落地中国：三代技术迭代阻断罕见遗传病</div>
+      <div class="post-time">2026-04-25 · 上观新闻</div>
+    </div>
+  </div>
+  <div class="post-body">第23届国际植入前遗传学大会在上海开幕，来自23个国家和地区的专家围绕胚胎植入前遗传学检测技术前沿变革展开讨论。这是该全球权威学术盛会自创立以来首次在中国举办。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">辅助生殖</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260425A05Y9X00?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- 儿科 -->
+<div class="dept-section" id="sec-儿科">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#dbeafe;">🧒</div>
+  <div class="dept-info"><h2>儿科（儿童健康 / 新生儿 / 疫苗 / 青春期）</h2>
+    <div class="dept-meta">全国 / 广东 / 广佛政策与行业动态 · 2026.5.9-5.15 · 珠三角优先 · 全部已溯源</div></div>
+  <div class="count-badge" style="background:var(--cyan);">2 条</div>
+</div>
+<div class="posts-grid">
+<!-- POSTS_儿科 -->
+<div class="sub-section-title">📌 儿童呼吸 & 感染 <span class="sub-count">1条</span></div>
+<div class="post-card" data-date="2026-05-09">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">肺炎球菌危害远超想象， 专家呼吁提升疫苗接种认知，尽早预防</div>
+      <div class="post-time">2026-05-09 · 环球网</div>
+    </div>
+  </div>
+  <div class="post-body">春季呼吸道疾病高发，肺炎球菌性疾病是威胁5岁以下儿童健康的重要风险之一，也是全球儿童死亡的重要原因。母亲节之际，公共卫生专家、儿科专家与疫苗企业代表共同呼吁家庭提升疫苗接种意识，尽早预防。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">儿科呼吸</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260509A05QZU00?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+<div class="sub-section-title">📌 新生儿 & 儿保 <span class="sub-count">1条</span></div>
+<div class="post-card" data-date="2026-05-09">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">世界地贫日：三级预防可有效阻断重症患儿出生</div>
+      <div class="post-time">2026-05-09 · 人民日报健康客户端</div>
+    </div>
+  </div>
+  <div class="post-body">5月8日是第33个世界地中海贫血日，主题为“防控地贫，携手同行；优生优育，守护健康”。地贫是我国南方高发遗传性出生缺陷，重型患者需终身输血，深圳市儿童医院专家指出三级预防可有效阻断重症患儿出生。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">新生儿</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260509A02T5Y00?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- 外科 -->
+<div class="dept-section" id="sec-外科">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#e0e7ff;">⚕️</div>
+  <div class="dept-info"><h2>外科（微创 / 器官移植 / 创伤 / 日间手术）</h2>
+    <div class="dept-meta">全国 / 广东 / 广佛政策与行业动态 · 2026.5.9-5.15 · 珠三角优先 · 全部已溯源</div></div>
+  <div class="count-badge" style="background:var(--green);">1 条</div>
+</div>
+<div class="posts-grid">
+<!-- POSTS_外科 -->
+<div class="sub-section-title">📌 手术机器人 & 微创 <span class="sub-count">1条</span></div>
+<div class="post-card" data-date="2026-05-04">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">上高原、出海去！对话元化智能创始人李艾俐：全球首创五合一骨科手术机器人的“破局”路</div>
+      <div class="post-time">2026-05-04 · 华夏时报</div>
+    </div>
+  </div>
+  <div class="post-body">元化智能在第139届广交会上展出锟铻五合一全骨科手术机器人，同时覆盖膝关节、髋关节等部位，为全球首创。公司创始人李艾俐表示，该机器人已上高原并出海，旨在突破骨科手术机器人的应用边界。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">手术机器人</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260504A05BQ000?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- 肿瘤 -->
+<div class="dept-section" id="sec-肿瘤">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#ede9fe;">🧬</div>
+  <div class="dept-info"><h2>肿瘤（靶向 / 免疫 / ADC / 早筛）</h2>
+    <div class="dept-meta">全国 / 广东 / 广佛政策与行业动态 · 2026.5.9-5.15 · 珠三角优先 · 全部已溯源</div></div>
+  <div class="count-badge" style="background:var(--purple);">4 条</div>
+</div>
+<div class="posts-grid">
+<!-- POSTS_肿瘤 -->
+<div class="sub-section-title">📌 ADC & 双抗新药 <span class="sub-count">4条</span></div>
+<div class="post-card" data-date="2026-05-04">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">ASCO年会召开在即 国产创新药LBA数量创新高 三条投资主线值得关注</div>
+      <div class="post-time">2026-05-04 · 财联社</div>
+    </div>
+  </div>
+  <div class="post-body">2026年美国临床肿瘤学会年会将于5月29日至6月2日举行，本届大会共63项研究入选LBA，其中12家中国企业的13项研究入选，创历史新高。三条投资主线包括核心品种数据含金量提升、生物医药板块普涨及ETF大涨超3%。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">ADC/双抗</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260504A03PIH00?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+<div class="post-card" data-date="2026-05-04">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">ADC爆发之后：载荷创新正在重塑下一代偶联药物</div>
+      <div class="post-time">2026-05-04 · 药明康德</div>
+    </div>
+  </div>
+  <div class="post-body">抗体偶联药物（ADC）在肿瘤治疗中广泛应用，但相似载荷导致交叉耐药风险增加。近期Nature Cancer研究探讨引入新机制载荷时如何平衡疗效、稳定性和安全性，推动偶联药物设计革新。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">ADC/双抗</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260504A02DKM00?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+<div class="post-card" data-date="2026-04-27">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">CSCO指南更新：HER2阳性胃癌二线治疗迎来关键突破</div>
+      <div class="post-time">2026-04-27 · 环球网</div>
+    </div>
+  </div>
+  <div class="post-body">2026年中国临床肿瘤学会指南大会发布新版《胃癌诊疗指南》，优赫得（注射用德曲妥珠单抗）作为唯一IA类证据的1级推荐纳入HER2阳性胃癌二线治疗。这一更新标志着HER2阳性胃癌二线治疗迎来关键突破，为患者提供更优选择。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">ADC/双抗</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260427A05WLL00?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+<div class="post-card" data-date="2026-04-26">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">中国生物医药企业在2026AACR公布临床前研究数据，突破细胞治疗可及性</div>
+      <div class="post-time">2026-04-26 · 新民晚报</div>
+    </div>
+  </div>
+  <div class="post-body">上海易慕峰生物在2026年美国癌症研究协会年会上公布基于iMAGIC平台开发的靶向BCMA体内CAR-T候选疗法IMV102最新临床前研究。结果显示，IMV102在多发性骨髓瘤模型中实现持久且显著的抗肿瘤活性，有望突破传统CAR-T疗法的可及性瓶颈。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">ADC/双抗</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260426A06JQX00?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- 内科 -->
+<div class="dept-section" id="sec-内科">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#fef2f2;">❤️</div>
+  <div class="dept-info"><h2>内科（心血管 / 消化 / 呼吸 / 港澳药械通）</h2>
+    <div class="dept-meta">全国 / 广东 / 广佛政策与行业动态 · 2026.5.9-5.15 · 珠三角优先 · 全部已溯源</div></div>
+  <div class="count-badge" style="background:var(--orange);">3 条</div>
+</div>
+<div class="posts-grid">
+<!-- POSTS_内科 -->
+<div class="sub-section-title">📌 GLP-1 & 代谢减重 <span class="sub-count">3条</span></div>
+<div class="post-card" data-date="2026-05-09">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">1.48亿糖尿病患者获全周期管理，双靶点多剂量注射笔获批</div>
+      <div class="post-time">2026-05-09 · 南方都市报</div>
+    </div>
+  </div>
+  <div class="post-body">5月8日，国家药监局批准预充式多剂量注射笔（2ml∶24mg），作为全球首个获批的GCG/GLP-1天然双靶点减重降糖药，实现单支注射笔完成2mg、4mg、6mg全剂量精准滴定。该剂型为超过1.48亿中国糖尿病患者提供起始治疗、剂量滴定和长期维持的全周期管理新选择。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">GLP-1</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260509A05WP400?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+<div class="post-card" data-date="2026-05-07">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">司美格鲁肽“失速”：一季度销售额下滑5%，中国诺和盈大跌36%，口服新药成破局希望</div>
+      <div class="post-time">2026-05-07 · 红星新闻</div>
+    </div>
+  </div>
+  <div class="post-body">诺和诺德2026年一季报显示，净销售额968.23亿丹麦克朗（约152.12亿美元），同比增长32%；营业利润596.18亿丹麦克朗（约93.66亿美元），同比增长65%。但司美格鲁肽系列产品销售额下滑5%，其中中国诺和盈大跌36%。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">GLP-1</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260507A04OKA00?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+<div class="post-card" data-date="2026-05-06">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">开门红！诺和诺德司美格鲁肽大卖，减重口服剂型成新增长引擎</div>
+      <div class="post-time">2026-05-06 · 21世纪经济报道</div>
+    </div>
+  </div>
+  <div class="post-body">5月6日，诺和诺德发布2026年第一季度财报，销售额达968.23亿丹麦克朗，同比增长24%。司美格鲁肽家族全线增长，减重口服剂型成为新增长引擎，业绩超市场预期。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">GLP-1</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260506A06L1D00?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- 皮肤 -->
+<div class="dept-section" id="sec-皮肤">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#ecfdf5;">🧴</div>
+  <div class="dept-info"><h2>皮肤科（银屑病 / 湿疹 / 医美合规）</h2>
+    <div class="dept-meta">全国 / 广东 / 广佛政策与行业动态 · 2026.5.9-5.15 · 珠三角优先 · 全部已溯源</div></div>
+  <div class="count-badge" style="background:var(--green);">0 条</div>
+</div>
+<div class="posts-grid">
+<!-- POSTS_皮肤 -->
+</div>
+</div>
+
+<!-- 口腔 -->
+<div class="dept-section" id="sec-口腔">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#fffbeb;">🦷</div>
+  <div class="dept-info"><h2>口腔科（种植 / 正畸 / 集采价格）</h2>
+    <div class="dept-meta">全国 / 广东 / 广佛政策与行业动态 · 2026.5.9-5.15 · 珠三角优先 · 全部已溯源</div></div>
+  <div class="count-badge" style="background:var(--gold);">1 条</div>
+</div>
+<div class="posts-grid">
+<!-- POSTS_口腔 -->
+<div class="sub-section-title">📌 种植牙 & 集采 <span class="sub-count">1条</span></div>
+<div class="post-card" data-date="2026-04-30">
+  <div class="post-header">
+    <div class="post-type-icon">📰</div>
+    <div class="post-header-info">
+      <div class="post-title">罗湖口腔种植病例大赛收官，以赛促规助力“湾区牙谷”建设</div>
+      <div class="post-time">2026-04-30 · 南方都市报</div>
+    </div>
+  </div>
+  <div class="post-body">罗湖区口腔专科联盟2026年种植病例大赛决赛举行，吸引近百名医师参与，16份病例入围。罗湖作为深港融合枢纽，跨境看牙需求持续攀升，推动区域口腔诊疗水平提升。</div>
+  <div class="post-footer">
+    <span class="tag tag-topic">种植牙</span>
+    <a class="post-link" href="https://view.inews.qq.com/a/20260430A08BVZ00?scene=news-skill" target="_blank" rel="noopener">原文链接 →</a>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- 业务启示 -->
+<div class="dept-section" id="sec-启示">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#f0fdf4;">💡</div>
+  <div class="dept-info"><h2>本院业务启示（可执行方向）</h2><div class="count-badge" style="background:var(--accent3);">7条启示</div>
+    <div class="dept-meta">全国 / 广东 / 广佛政策与行业动态 · 2026.5.9-5.15 · 珠三角优先 · 全部已溯源</div></div>
+</div>
+<div class="posts-grid">
+<!-- POSTS_启示 -->
+<div class="insight-card"><h3>🧬 抢滩辅助生殖与长护险红利</h3><p>① 针对深圳惠民保新增辅助生殖专项保障（新闻5），联合商保推出“辅助生殖+妇产”打包服务，吸引跨城患者。② 利用广东长护险扩围至失能老人（新闻25），开设“产后康复+失能护理”衔接门诊，承接出院后照护需求。③ 在佛山、广州等地试点“妇产-长护险”绿色通道，为高龄孕产妇及并发症患者提供一站式报销指引。</p></div>
+<div class="insight-card"><h3>💡 借力社区医院新政拓展转诊网络</h3><p>① 与佛山、深圳基层社区医院签约双向转诊协议，承接社区无法处理的复杂妊娠及高危分娩（新闻1）。② 为社区医生提供妇产科远程会诊和AI辅助诊断工具（新闻24），提升基层筛查能力并锁定转诊来源。③ 针对门诊报销90%政策，设计“社区初筛-专科确诊-术后回社区康复”的闭环服务包，降低患者自付比例。</p></div>
+<div class="insight-card"><h3>🤖 布局手术机器人差异化收费服务</h3><p>① 引入妇产科手术机器人（如子宫肌瘤切除、盆底修复），按新规最高加收2.7万元（新闻14），推出“机器人微创+快速康复”套餐，吸引高端自费患者。② 针对远程机器人手术200%溢价争议（新闻15），主动公开手术效果与成本对比数据，建立透明定价机制。③ 与医保局沟通，争取将机器人辅助的复杂妇产手术纳入本地医保试点支付范围。</p></div>
+<div class="insight-card"><h3>🧴 应对集采与合规压力优化供应链</h3><p>① 建立集采药品和耗材的“双来源”供应商库，避免因单一生产线缺陷导致断供（新闻6）。② 针对第六批耗材国采落地（新闻7），重新谈判药物球囊、泌尿耗材采购价，将节省成本用于升级产科急救设备。③ 设立内部合规审计岗，严查医药代表回扣行为（新闻12），确保集采品种使用合规。</p></div>
+<div class="insight-card"><h3>👶 抓住儿童用药新政拓展儿科服务</h3><p>① 联合广州妇儿中心等国家儿童医学中心（新闻56），开设新生儿及儿童用药联合门诊，承接集采外的高端儿童药需求。② 针对八部门儿童药研发支持政策（新闻31），与药企合作开展妇儿专用剂型（如口服液、栓剂）的临床观察，争取成为区域试验基地。③ 在产科出院环节嵌入儿童基药目录（新闻66）科普，引导新生儿家庭选择医保覆盖的儿童药。</p></div>
+<div class="insight-card"><h3>💡 借力区域医改与地铁红利扩客流</h3><p>① 在佛山地铁3号线沿线站点（新闻37）投放妇产科特色服务广告，重点推广“产检-分娩-月子”一体化套餐。② 对标三明医改后顺德模式（新闻17），与顺德区医院共建“高危孕产妇转诊中心”，吸引县域患者。③ 针对广州佛山同城化趋势（新闻33），开通跨城免费接送班车，覆盖广佛交界社区。</p></div>
+<div class="insight-card"><h3>💡 强化产科急救与数字化指挥能力</h3><p>① 参考佛山首个产科“指挥中枢”（新闻51），建设本院产科24小时应急响应中心，整合院内急救、血库、手术室资源。② 部署AI数字分身（新闻24）用于高危妊娠预警，实时监测胎心、血压数据并自动触发抢救流程。③ 与深圳、广州120急救系统联网，建立“院前-院内”产科绿色通道，缩短危重孕产妇转运时间。</p></div>
+<div class="highlight-box"><h3>📈 本周关键信号总结</h3><ul><li>针对深圳惠民保新增辅助生殖专项保障（新闻5），联合商保推出“辅助生殖+妇产”打包服务，吸引跨城患者。</li><li>与佛山、深圳基层社区医院签约双向转诊协议，承接社区无法处理的复杂妊娠及高危分娩（新闻1）。</li><li>引入妇产科手术机器人（如子宫肌瘤切除、盆底修复），按新规最高加收2.7万元（新闻14），推出“机器人微创+快速康复”套餐，吸引高端自费患者。</li><li>建立集采药品和耗材的“双来源”供应商库，避免因单一生产线缺陷导致断供（新闻6）。</li><li>联合广州妇儿中心等国家儿童医学中心（新闻56），开设新生儿及儿童用药联合门诊，承接集采外的高端儿童药需求。</li><li>在佛山地铁3号线沿线站点（新闻37）投放妇产科特色服务广告，重点推广“产检-分娩-月子”一体化套餐。</li><li>参考佛山首个产科“指挥中枢”（新闻51），建设本院产科24小时应急响应中心，整合院内急救、血库、手术室资源。</li></ul></div>
+</div>
+</div>
+
+<!-- 历史存档 -->
+<div class="dept-section" id="sec-历史">
+<div class="dept-header">
+  <div class="dept-icon" style="background:#f3f4f6;">📂</div>
+  <div class="dept-info"><h2>历史存档</h2>
+    <div class="dept-meta">全国 / 广东 / 广佛政策与行业动态 · 2026.5.9-5.15 · 珠三角优先 · 全部已溯源</div></div>
+</div>
+<ul class="archive-list" id="archive-list">
+<li><a href="https://dfvynz844r-sys.github.io/trend_auto1/report-20260430.html" target="_blank">2026年04月30日 版本</a></li>
+<!-- ARCHIVE_ENTRIES -->
+</ul>
+</div>
+
+</div><!-- end content -->
+<div class="footer">
+  <p>广佛医疗行业动态报告 · 自动生成 · 数据来源：腾讯新闻 + WeWe RSS · AI专题提炼 · 质量过滤</p>
+</div>
+<script>
+function showTab(id){
+  document.querySelectorAll('.dept-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  var sec=document.getElementById('sec-'+id);
+  var btn=document.getElementById('tab-'+id);
+  if(sec)sec.classList.add('active');
+  if(btn)btn.classList.add('active');
+}
+showTab('宏观');
+</script>
+</body>
+</html>
